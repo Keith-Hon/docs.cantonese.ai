@@ -109,7 +109,7 @@ export default function Home() {
               </Link>
             </div>
 
-            <div className="p-6 bg-white dark:bg-gray-800 rounded-lg shadow-md border border-gray-200 dark:border-gray-700">
+            {/* <div className="p-6 bg-white dark:bg-gray-800 rounded-lg shadow-md border border-gray-200 dark:border-gray-700">
               <h3 className="text-xl font-semibold text-gray-900 dark:text-white mb-3">Voice Cloning</h3>
               <p className="text-gray-600 dark:text-gray-300 mb-4">
                 Generate speech that mimics specific voices with advanced AI voice cloning technology.
@@ -147,12 +147,12 @@ export default function Home() {
               <Link href="/docs/speech-editing" className="text-blue-600 hover:text-blue-800 dark:text-blue-400 dark:hover:text-blue-300 font-medium">
                 Learn more →
               </Link>
-            </div>
+            </div> */}
           </div>
         </section>
 
         {/* Migration Section */}
-        <section className="mb-16 bg-white dark:bg-gray-800 rounded-lg p-8 shadow-md border border-gray-200 dark:border-gray-700">
+        {/* <section className="mb-16 bg-white dark:bg-gray-800 rounded-lg p-8 shadow-md border border-gray-200 dark:border-gray-700">
           <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-6">
             Migrating from another AI provider?
           </h2>
@@ -184,7 +184,7 @@ response = requests.post(
 )`}
             </pre>
           </div>
-        </section>
+        </section> */}
 
         {/* Questions and Feedback */}
         <section className="text-center">
