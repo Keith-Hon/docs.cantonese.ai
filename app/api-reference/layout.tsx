@@ -54,15 +54,15 @@ export default function ApiReferenceLayout({
               <span className="text-sm text-gray-500 dark:text-gray-400">API Reference</span>
             </div>
             <nav className="hidden md:flex space-x-8">
-              <Link href="/docs" className="text-gray-600 hover:text-blue-600 dark:text-gray-300 dark:hover:text-blue-400">
+              {/* <Link href="/docs" className="text-gray-600 hover:text-blue-600 dark:text-gray-300 dark:hover:text-blue-400">
                 Docs
-              </Link>
+              </Link> */}
               <Link href="/api-reference" className="text-gray-600 hover:text-blue-600 dark:text-gray-300 dark:hover:text-blue-400">
                 API Reference
               </Link>
-              <Link href="/examples" className="text-gray-600 hover:text-blue-600 dark:text-gray-300 dark:hover:text-blue-400">
+              {/* <Link href="/examples" className="text-gray-600 hover:text-blue-600 dark:text-gray-300 dark:hover:text-blue-400">
                 Examples
-              </Link>
+              </Link> */}
               <a href="https://cantonese.ai" className="text-gray-600 hover:text-blue-600 dark:text-gray-300 dark:hover:text-blue-400">
                 Main Site
               </a>

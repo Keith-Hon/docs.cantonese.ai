@@ -14,15 +14,15 @@ export default function Home() {
               <span className="text-sm text-gray-500 dark:text-gray-400">API Documentation</span>
             </div>
             <nav className="hidden md:flex space-x-8">
-              <Link href="/docs" className="text-gray-600 hover:text-blue-600 dark:text-gray-300 dark:hover:text-blue-400">
+              {/* <Link href="/docs" className="text-gray-600 hover:text-blue-600 dark:text-gray-300 dark:hover:text-blue-400">
                 Docs
-              </Link>
-              <Link href="/api-reference" className="text-gray-600 hover:text-blue-600 dark:text-gray-300 dark:hover:text-blue-400">
+              </Link> */}
+              {/* <Link href="/api-reference" className="text-gray-600 hover:text-blue-600 dark:text-gray-300 dark:hover:text-blue-400">
                 API Reference
-              </Link>
-              <Link href="/examples" className="text-gray-600 hover:text-blue-600 dark:text-gray-300 dark:hover:text-blue-400">
+              </Link> */}
+              {/* <Link href="/examples" className="text-gray-600 hover:text-blue-600 dark:text-gray-300 dark:hover:text-blue-400">
                 Examples
-              </Link>
+              </Link> */}
               <a href="https://cantonese.ai" className="text-gray-600 hover:text-blue-600 dark:text-gray-300 dark:hover:text-blue-400">
                 Main Site
               </a>
@@ -63,7 +63,7 @@ export default function Home() {
         </section>
 
         {/* Quick Reference */}
-        <section className="mb-16">
+        {/* <section className="mb-16">
           <h2 className="text-3xl font-bold text-gray-900 dark:text-white mb-8 text-center">
             Quick Reference
           </h2>
@@ -81,7 +81,7 @@ export default function Home() {
               <p className="text-gray-600 dark:text-gray-300">Use the cantonese.ai API in your application</p>
             </Link>
           </div>
-        </section>
+        </section> */}
 
         {/* Featured Services */}
         <section className="mb-16">
@@ -89,17 +89,8 @@ export default function Home() {
             Featured Services
           </h2>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-            <div className="p-6 bg-white dark:bg-gray-800 rounded-lg shadow-md border border-gray-200 dark:border-gray-700">
-              <h3 className="text-xl font-semibold text-gray-900 dark:text-white mb-3">Speech-to-Text</h3>
-              <p className="text-gray-600 dark:text-gray-300 mb-4">
-                Convert Cantonese audio files into accurate written text with high precision.
-              </p>
-              <Link href="/docs/speech-to-text" className="text-blue-600 hover:text-blue-800 dark:text-blue-400 dark:hover:text-blue-300 font-medium">
-                Learn more →
-              </Link>
-            </div>
-            
-            <div className="p-6 bg-white dark:bg-gray-800 rounded-lg shadow-md border border-gray-200 dark:border-gray-700">
+     
+          <div className="p-6 bg-white dark:bg-gray-800 rounded-lg shadow-md border border-gray-200 dark:border-gray-700">
               <h3 className="text-xl font-semibold text-gray-900 dark:text-white mb-3">Text-to-Speech</h3>
               <p className="text-gray-600 dark:text-gray-300 mb-4">
                 Transform written text into natural-sounding Cantonese speech with multiple voice options.
@@ -109,6 +100,16 @@ export default function Home() {
               </Link>
             </div>
 
+            <div className="p-6 bg-white dark:bg-gray-800 rounded-lg shadow-md border border-gray-200 dark:border-gray-700">
+              <h3 className="text-xl font-semibold text-gray-900 dark:text-white mb-3">Speech-to-Text</h3>
+              <p className="text-gray-600 dark:text-gray-300 mb-4">
+                Convert Cantonese audio files into accurate written text with high precision.
+              </p>
+              <Link href="/docs/speech-to-text" className="text-blue-600 hover:text-blue-800 dark:text-blue-400 dark:hover:text-blue-300 font-medium">
+                Learn more →
+              </Link>
+            </div>
+       
             {/* <div className="p-6 bg-white dark:bg-gray-800 rounded-lg shadow-md border border-gray-200 dark:border-gray-700">
               <h3 className="text-xl font-semibold text-gray-900 dark:text-white mb-3">Voice Cloning</h3>
               <p className="text-gray-600 dark:text-gray-300 mb-4">
