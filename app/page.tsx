@@ -1,6 +1,6 @@
 export default function ApiReferencePage() {
   return (
-    <div className="prose prose-lg dark:prose-invert max-w-none">
+    <div className="prose prose-lg max-w-none">
       <h1>REST API</h1>
 
       <p>
@@ -16,32 +16,32 @@ export default function ApiReferencePage() {
       <h2 id="endpoints-overview">Endpoints Overview</h2>
 
       <div className="grid gap-6 not-prose">
-        <div className="border border-gray-200 dark:border-gray-700 rounded-lg p-6">
-          <h3 className="text-xl font-semibold text-gray-900 dark:text-white mb-3">
+        <div className="border border-gray-200 rounded-lg p-6">
+          <h3 className="text-xl font-semibold text-gray-900 mb-3">
             Speech-to-Text
           </h3>
-          <p className="text-gray-600 dark:text-gray-300 mb-4">
+          <p className="text-gray-600 mb-4">
             Convert Cantonese audio files to accurate text transcriptions.
           </p>
-          <div className="bg-gray-50 dark:bg-gray-800 rounded p-3 mb-3">
+          <div className="bg-gray-50 rounded p-3 mb-3">
             <code className="text-sm">POST /v1/speech-to-text</code>
           </div>
-          <a href="/speech-to-text" className="text-blue-600 hover:text-blue-800 dark:text-blue-400 dark:hover:text-blue-300 font-medium">
+          <a href="/speech-to-text" className="text-blue-600 hover:text-blue-800 font-medium">
             View Documentation →
           </a>
         </div>
 
-        <div className="border border-gray-200 dark:border-gray-700 rounded-lg p-6">
-          <h3 className="text-xl font-semibold text-gray-900 dark:text-white mb-3">
+        <div className="border border-gray-200 rounded-lg p-6">
+          <h3 className="text-xl font-semibold text-gray-900 mb-3">
             Text-to-Speech
           </h3>
-          <p className="text-gray-600 dark:text-gray-300 mb-4">
+          <p className="text-gray-600 mb-4">
             Generate natural-sounding Cantonese speech from text input.
           </p>
-          <div className="bg-gray-50 dark:bg-gray-800 rounded p-3 mb-3">
+          <div className="bg-gray-50 rounded p-3 mb-3">
             <code className="text-sm">POST /v1/text-to-speech</code>
           </div>
-          <a href="/text-to-speech" className="text-blue-600 hover:text-blue-800 dark:text-blue-400 dark:hover:text-blue-300 font-medium">
+          <a href="/text-to-speech" className="text-blue-600 hover:text-blue-800 font-medium">
             View Documentation →
           </a>
         </div>
@@ -51,7 +51,7 @@ export default function ApiReferencePage() {
 
       <p>
         For detailed error codes and handling, see our{" "}
-        <a href="/api-reference/errors" className="text-blue-600 hover:text-blue-800 dark:text-blue-400 dark:hover:text-blue-300">
+        <a href="/api-reference/errors" className="text-blue-600 hover:text-blue-800">
           Error Reference
         </a>
         .
@@ -63,7 +63,7 @@ export default function ApiReferencePage() {
 
       <p>
         Ready to start building? Check out our{" "}
-        <a href="/docs/quickstart" className="text-blue-600 hover:text-blue-800 dark:text-blue-400 dark:hover:text-blue-300">
+        <a href="/docs/quickstart" className="text-blue-600 hover:text-blue-800">
           Quickstart Guide
         </a>{" "}
         for step-by-step instructions on making your first API request.
@@ -71,7 +71,7 @@ export default function ApiReferencePage() {
 
       <p>
         For code examples and integration patterns, visit our{" "}
-        <a href="/examples" className="text-blue-600 hover:text-blue-800 dark:text-blue-400 dark:hover:text-blue-300">
+        <a href="/examples" className="text-blue-600 hover:text-blue-800">
           Examples
         </a>{" "}
         section.

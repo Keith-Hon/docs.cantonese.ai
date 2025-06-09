@@ -1,6 +1,6 @@
 export default function IntroductionPage() {
   return (
-    <div className="prose prose-lg dark:prose-invert max-w-none">
+    <div className="prose prose-lg max-w-none">
       <h1>Introduction</h1>
       
       <h2 id="what-is-cantonese-ai-api">What is cantonese.ai and cantonese.ai API</h2>
@@ -52,7 +52,7 @@ export default function IntroductionPage() {
       <p>
         You probably won't need cantonese.ai API if you're only interested in using our services 
         through the web interface at{" "}
-        <a href="https://cantonese.ai" className="text-blue-600 hover:text-blue-800 dark:text-blue-400 dark:hover:text-blue-300">
+        <a href="https://cantonese.ai" className="text-blue-600 hover:text-blue-800">
           cantonese.ai
         </a>
         . But to integrate Cantonese AI capabilities into your application, or to add our services 
@@ -61,7 +61,7 @@ export default function IntroductionPage() {
       
       <p className="italic">
         Head to the{" "}
-        <a href="/docs/quickstart" className="text-blue-600 hover:text-blue-800 dark:text-blue-400 dark:hover:text-blue-300">
+        <a href="/docs/quickstart" className="text-blue-600 hover:text-blue-800">
           Quickstart Guide
         </a>{" "}
         and you will find (almost) all you need to start using cantonese.ai API.
@@ -77,7 +77,7 @@ export default function IntroductionPage() {
         <li>
           <strong>cantonese.ai Web</strong>
           <ul>
-            <li>Accessible on: <a href="https://cantonese.ai" className="text-blue-600 hover:text-blue-800 dark:text-blue-400 dark:hover:text-blue-300">cantonese.ai</a></li>
+            <li>Accessible on: <a href="https://cantonese.ai" className="text-blue-600 hover:text-blue-800">cantonese.ai</a></li>
             <li>Programming knowledge: Not required</li>
             <li>Account: Managed by cantonese.ai</li>
             <li>Provides web-based AI services for speech-to-text, text-to-speech, translation, chatbots, and more.</li>
@@ -112,29 +112,29 @@ export default function IntroductionPage() {
       <p>cantonese.ai API currently supports the following services:</p>
       
       <div className="grid md:grid-cols-2 gap-6 not-prose">
-        <div className="p-4 border border-gray-200 dark:border-gray-700 rounded-lg">
-          <h4 className="font-semibold text-gray-900 dark:text-white mb-2">Speech-to-Text</h4>
-          <p className="text-gray-600 dark:text-gray-300 text-sm">Convert Cantonese audio to accurate text transcriptions</p>
+        <div className="p-4 border border-gray-200 rounded-lg">
+          <h4 className="font-semibold text-gray-900 mb-2">Speech-to-Text</h4>
+          <p className="text-gray-600 text-sm">Convert Cantonese audio to accurate text transcriptions</p>
         </div>
-        <div className="p-4 border border-gray-200 dark:border-gray-700 rounded-lg">
-          <h4 className="font-semibold text-gray-900 dark:text-white mb-2">Text-to-Speech</h4>
-          <p className="text-gray-600 dark:text-gray-300 text-sm">Generate natural-sounding Cantonese speech from text</p>
+        <div className="p-4 border border-gray-200 rounded-lg">
+          <h4 className="font-semibold text-gray-900 mb-2">Text-to-Speech</h4>
+          <p className="text-gray-600 text-sm">Generate natural-sounding Cantonese speech from text</p>
         </div>
-        <div className="p-4 border border-gray-200 dark:border-gray-700 rounded-lg">
-          <h4 className="font-semibold text-gray-900 dark:text-white mb-2">Voice Cloning</h4>
-          <p className="text-gray-600 dark:text-gray-300 text-sm">Create custom voices that mimic specific speakers</p>
+        <div className="p-4 border border-gray-200 rounded-lg">
+          <h4 className="font-semibold text-gray-900 mb-2">Voice Cloning</h4>
+          <p className="text-gray-600 text-sm">Create custom voices that mimic specific speakers</p>
         </div>
-        <div className="p-4 border border-gray-200 dark:border-gray-700 rounded-lg">
-          <h4 className="font-semibold text-gray-900 dark:text-white mb-2">Translation</h4>
-          <p className="text-gray-600 dark:text-gray-300 text-sm">Translate between Cantonese and other languages</p>
+        <div className="p-4 border border-gray-200 rounded-lg">
+          <h4 className="font-semibold text-gray-900 mb-2">Translation</h4>
+          <p className="text-gray-600 text-sm">Translate between Cantonese and other languages</p>
         </div>
-        <div className="p-4 border border-gray-200 dark:border-gray-700 rounded-lg">
-          <h4 className="font-semibold text-gray-900 dark:text-white mb-2">Chatbot</h4>
-          <p className="text-gray-600 dark:text-gray-300 text-sm">Interactive AI assistants with Cantonese cultural context</p>
+        <div className="p-4 border border-gray-200 rounded-lg">
+          <h4 className="font-semibold text-gray-900 mb-2">Chatbot</h4>
+          <p className="text-gray-600 text-sm">Interactive AI assistants with Cantonese cultural context</p>
         </div>
-        <div className="p-4 border border-gray-200 dark:border-gray-700 rounded-lg">
-          <h4 className="font-semibold text-gray-900 dark:text-white mb-2">Speech Editing</h4>
-          <p className="text-gray-600 dark:text-gray-300 text-sm">Modify and enhance audio content seamlessly</p>
+        <div className="p-4 border border-gray-200 rounded-lg">
+          <h4 className="font-semibold text-gray-900 mb-2">Speech Editing</h4>
+          <p className="text-gray-600 text-sm">Modify and enhance audio content seamlessly</p>
         </div>
       </div>
     </div>

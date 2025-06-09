@@ -48,7 +48,7 @@ export default function SpeechToTextApiPage() {
         },
     };
     return (
-        <div className="prose prose-lg dark:prose-invert max-w-none">
+        <div className="prose prose-lg max-w-none">
             <h1>Speech-to-Text</h1>
 
             <p>
@@ -56,9 +56,9 @@ export default function SpeechToTextApiPage() {
                 audio formats, timestamps, speaker diarization, and advanced transcription options.
             </p>
 
-            {/* <div className="bg-blue-50 dark:bg-blue-900/20 border border-blue-200 dark:border-blue-800 rounded-lg p-4 not-prose">
+            {/* <div className="bg-blue-50 border border-blue-200 rounded-lg p-4 not-prose">
                 <div className="flex items-center space-x-2">
-                    <span className="bg-green-100 text-green-800 dark:bg-green-900 dark:text-green-300 px-2 py-1 rounded text-sm font-medium">
+                    <span className="bg-green-100 text-green-800 px-2 py-1 rounded text-sm font-medium">
                         POST
                     </span>
                     <code className="text-sm font-mono">/v1/speech-to-text</code>
@@ -70,105 +70,105 @@ export default function SpeechToTextApiPage() {
             <p>This endpoint requires multipart/form-data for file uploads.</p>
             
             <div className="overflow-x-auto not-prose">
-                <table className="min-w-full border border-gray-200 dark:border-gray-700">
-                    <thead className="bg-gray-50 dark:bg-gray-800">
+                <table className="min-w-full border border-gray-200">
+                    <thead className="bg-gray-50">
                         <tr>
-                            <th className="px-4 py-2 text-left text-sm font-medium text-gray-900 dark:text-white border-b border-gray-200 dark:border-gray-700">
+                            <th className="px-4 py-2 text-left text-sm font-medium text-gray-900 border-b border-gray-200">
                                 Parameter
                             </th>
-                            <th className="px-4 py-2 text-left text-sm font-medium text-gray-900 dark:text-white border-b border-gray-200 dark:border-gray-700">
+                            <th className="px-4 py-2 text-left text-sm font-medium text-gray-900 border-b border-gray-200">
                                 Type
                             </th>
-                            <th className="px-4 py-2 text-left text-sm font-medium text-gray-900 dark:text-white border-b border-gray-200 dark:border-gray-700">
+                            <th className="px-4 py-2 text-left text-sm font-medium text-gray-900 border-b border-gray-200">
                                 Required
                             </th>
-                            <th className="px-4 py-2 text-left text-sm font-medium text-gray-900 dark:text-white border-b border-gray-200 dark:border-gray-700">
+                            <th className="px-4 py-2 text-left text-sm font-medium text-gray-900 border-b border-gray-200">
                                 Description
                             </th>
                         </tr>
                     </thead>
-                    <tbody className="bg-white dark:bg-gray-900">
+                    <tbody className="bg-white">
                         <tr>
-                            <td className="px-4 py-2 text-sm font-mono text-gray-900 dark:text-white border-b border-gray-200 dark:border-gray-700">
+                            <td className="px-4 py-2 text-sm font-mono text-gray-900 border-b border-gray-200">
                                 api_key
                             </td>
-                            <td className="px-4 py-2 text-sm text-gray-600 dark:text-gray-300 border-b border-gray-200 dark:border-gray-700">
+                            <td className="px-4 py-2 text-sm text-gray-600 border-b border-gray-200">
                                 string
                             </td>
-                            <td className="px-4 py-2 text-sm text-gray-600 dark:text-gray-300 border-b border-gray-200 dark:border-gray-700">
+                            <td className="px-4 py-2 text-sm text-gray-600 border-b border-gray-200">
                                 Yes
                             </td>
-                            <td className="px-4 py-2 text-sm text-gray-600 dark:text-gray-300 border-b border-gray-200 dark:border-gray-700">
+                            <td className="px-4 py-2 text-sm text-gray-600 border-b border-gray-200">
                                 Your API key for authentication
                             </td>
                         </tr>
                         <tr>
-                            <td className="px-4 py-2 text-sm font-mono text-gray-900 dark:text-white border-b border-gray-200 dark:border-gray-700">
+                            <td className="px-4 py-2 text-sm font-mono text-gray-900 border-b border-gray-200">
                                 data
                             </td>
-                            <td className="px-4 py-2 text-sm text-gray-600 dark:text-gray-300 border-b border-gray-200 dark:border-gray-700">
+                            <td className="px-4 py-2 text-sm text-gray-600 border-b border-gray-200">
                                 file
                             </td>
-                            <td className="px-4 py-2 text-sm text-gray-600 dark:text-gray-300 border-b border-gray-200 dark:border-gray-700">
+                            <td className="px-4 py-2 text-sm text-gray-600 border-b border-gray-200">
                                 Yes
                             </td>
-                            <td className="px-4 py-2 text-sm text-gray-600 dark:text-gray-300 border-b border-gray-200 dark:border-gray-700">
+                            <td className="px-4 py-2 text-sm text-gray-600 border-b border-gray-200">
                                 Audio file to transcribe. Supported formats: wav, mp3, m4a, flac, ogg. Max size: 25MB, max duration: 30 minutes.
                             </td>
                         </tr>
                         <tr>
-                            <td className="px-4 py-2 text-sm font-mono text-gray-900 dark:text-white border-b border-gray-200 dark:border-gray-700">
+                            <td className="px-4 py-2 text-sm font-mono text-gray-900 border-b border-gray-200">
                                 with_timestmap
                             </td>
-                            <td className="px-4 py-2 text-sm text-gray-600 dark:text-gray-300 border-b border-gray-200 dark:border-gray-700">
+                            <td className="px-4 py-2 text-sm text-gray-600 border-b border-gray-200">
                                 boolean
                             </td>
-                            <td className="px-4 py-2 text-sm text-gray-600 dark:text-gray-300 border-b border-gray-200 dark:border-gray-700">
+                            <td className="px-4 py-2 text-sm text-gray-600 border-b border-gray-200">
                                 No
                             </td>
-                            <td className="px-4 py-2 text-sm text-gray-600 dark:text-gray-300 border-b border-gray-200 dark:border-gray-700">
+                            <td className="px-4 py-2 text-sm text-gray-600 border-b border-gray-200">
                                 Include word-level timestamps in the response. Defaults to false.
                             </td>
                         </tr>
                         <tr>
-                            <td className="px-4 py-2 text-sm font-mono text-gray-900 dark:text-white border-b border-gray-200 dark:border-gray-700">
+                            <td className="px-4 py-2 text-sm font-mono text-gray-900 border-b border-gray-200">
                                 with_diarization
                             </td>
-                            <td className="px-4 py-2 text-sm text-gray-600 dark:text-gray-300 border-b border-gray-200 dark:border-gray-700">
+                            <td className="px-4 py-2 text-sm text-gray-600 border-b border-gray-200">
                                 boolean
                             </td>
-                            <td className="px-4 py-2 text-sm text-gray-600 dark:text-gray-300 border-b border-gray-200 dark:border-gray-700">
+                            <td className="px-4 py-2 text-sm text-gray-600 border-b border-gray-200">
                                 No
                             </td>
-                            <td className="px-4 py-2 text-sm text-gray-600 dark:text-gray-300 border-b border-gray-200 dark:border-gray-700">
+                            <td className="px-4 py-2 text-sm text-gray-600 border-b border-gray-200">
                                 Enable speaker diarization to identify different speakers. Defaults to false.
                             </td>
                         </tr>
                         <tr>
-                            <td className="px-4 py-2 text-sm font-mono text-gray-900 dark:text-white border-b border-gray-200 dark:border-gray-700">
+                            <td className="px-4 py-2 text-sm font-mono text-gray-900 border-b border-gray-200">
                                 language
                             </td>
-                            <td className="px-4 py-2 text-sm text-gray-600 dark:text-gray-300 border-b border-gray-200 dark:border-gray-700">
+                            <td className="px-4 py-2 text-sm text-gray-600 border-b border-gray-200">
                                 string
                             </td>
-                            <td className="px-4 py-2 text-sm text-gray-600 dark:text-gray-300 border-b border-gray-200 dark:border-gray-700">
+                            <td className="px-4 py-2 text-sm text-gray-600 border-b border-gray-200">
                                 No
                             </td>
-                            <td className="px-4 py-2 text-sm text-gray-600 dark:text-gray-300 border-b border-gray-200 dark:border-gray-700">
+                            <td className="px-4 py-2 text-sm text-gray-600 border-b border-gray-200">
                                 Source language hint. Defaults to "auto". Options: "auto", "cantonese", "english", "mandarin".
                             </td>
                         </tr>
                         <tr>
-                            <td className="px-4 py-2 text-sm font-mono text-gray-900 dark:text-white border-b border-gray-200 dark:border-gray-700">
+                            <td className="px-4 py-2 text-sm font-mono text-gray-900 border-b border-gray-200">
                                 model
                             </td>
-                            <td className="px-4 py-2 text-sm text-gray-600 dark:text-gray-300 border-b border-gray-200 dark:border-gray-700">
+                            <td className="px-4 py-2 text-sm text-gray-600 border-b border-gray-200">
                                 string
                             </td>
-                            <td className="px-4 py-2 text-sm text-gray-600 dark:text-gray-300 border-b border-gray-200 dark:border-gray-700">
+                            <td className="px-4 py-2 text-sm text-gray-600 border-b border-gray-200">
                                 No
                             </td>
-                            <td className="px-4 py-2 text-sm text-gray-600 dark:text-gray-300 border-b border-gray-200 dark:border-gray-700">
+                            <td className="px-4 py-2 text-sm text-gray-600 border-b border-gray-200">
                                 Transcription model to use. Defaults to "general". Options: "general", "medical", "legal", "conversational".
                             </td>
                         </tr>
@@ -179,25 +179,25 @@ export default function SpeechToTextApiPage() {
             <h2 id="supported-formats">Supported Audio Formats</h2>
             
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4 not-prose">
-                <div className="border border-gray-200 dark:border-gray-700 rounded-lg p-4">
-                    <h4 className="font-semibold text-gray-900 dark:text-white mb-2">WAV</h4>
-                    <p className="text-sm text-gray-600 dark:text-gray-300">Uncompressed audio, best quality</p>
+                <div className="border border-gray-200 rounded-lg p-4">
+                    <h4 className="font-semibold text-gray-900 mb-2">WAV</h4>
+                    <p className="text-sm text-gray-600">Uncompressed audio, best quality</p>
                 </div>
-                <div className="border border-gray-200 dark:border-gray-700 rounded-lg p-4">
-                    <h4 className="font-semibold text-gray-900 dark:text-white mb-2">MP3</h4>
-                    <p className="text-sm text-gray-600 dark:text-gray-300">Compressed format, good for web</p>
+                <div className="border border-gray-200 rounded-lg p-4">
+                    <h4 className="font-semibold text-gray-900 mb-2">MP3</h4>
+                    <p className="text-sm text-gray-600">Compressed format, good for web</p>
                 </div>
-                <div className="border border-gray-200 dark:border-gray-700 rounded-lg p-4">
-                    <h4 className="font-semibold text-gray-900 dark:text-white mb-2">M4A</h4>
-                    <p className="text-sm text-gray-600 dark:text-gray-300">Apple's audio format</p>
+                <div className="border border-gray-200 rounded-lg p-4">
+                    <h4 className="font-semibold text-gray-900 mb-2">M4A</h4>
+                    <p className="text-sm text-gray-600">Apple's audio format</p>
                 </div>
-                <div className="border border-gray-200 dark:border-gray-700 rounded-lg p-4">
-                    <h4 className="font-semibold text-gray-900 dark:text-white mb-2">FLAC</h4>
-                    <p className="text-sm text-gray-600 dark:text-gray-300">Lossless compression</p>
+                <div className="border border-gray-200 rounded-lg p-4">
+                    <h4 className="font-semibold text-gray-900 mb-2">FLAC</h4>
+                    <p className="text-sm text-gray-600">Lossless compression</p>
                 </div>
-                <div className="border border-gray-200 dark:border-gray-700 rounded-lg p-4">
-                    <h4 className="font-semibold text-gray-900 dark:text-white mb-2">OGG</h4>
-                    <p className="text-sm text-gray-600 dark:text-gray-300">Open source format</p>
+                <div className="border border-gray-200 rounded-lg p-4">
+                    <h4 className="font-semibold text-gray-900 mb-2">OGG</h4>
+                    <p className="text-sm text-gray-600">Open source format</p>
                 </div>
             </div>
 
@@ -247,79 +247,79 @@ export default function SpeechToTextApiPage() {
             h2 id="common-errors">Common Error Codes</h2>
             
             <div className="overflow-x-auto not-prose">
-                <table className="min-w-full border border-gray-200 dark:border-gray-700">
-                    <thead className="bg-gray-50 dark:bg-gray-800">
+                <table className="min-w-full border border-gray-200">
+                    <thead className="bg-gray-50">
                         <tr>
-                            <th className="px-4 py-2 text-left text-sm font-medium text-gray-900 dark:text-white border-b border-gray-200 dark:border-gray-700">
+                            <th className="px-4 py-2 text-left text-sm font-medium text-gray-900 border-b border-gray-200">
                                 Error Code
                             </th>
-                            <th className="px-4 py-2 text-left text-sm font-medium text-gray-900 dark:text-white border-b border-gray-200 dark:border-gray-700">
+                            <th className="px-4 py-2 text-left text-sm font-medium text-gray-900 border-b border-gray-200">
                                 Description
                             </th>
                         </tr>
                     </thead>
-                    <tbody className="bg-white dark:bg-gray-900">
+                    <tbody className="bg-white">
                         <tr>
-                            <td className="px-4 py-2 text-sm font-mono text-gray-900 dark:text-white border-b border-gray-200 dark:border-gray-700">
+                            <td className="px-4 py-2 text-sm font-mono text-gray-900 border-b border-gray-200">
                                 api_key_required
                             </td>
-                            <td className="px-4 py-2 text-sm text-gray-600 dark:text-gray-300 border-b border-gray-200 dark:border-gray-700">
+                            <td className="px-4 py-2 text-sm text-gray-600 border-b border-gray-200">
                                 The api_key parameter is required
                             </td>
                         </tr>
                         <tr>
-                            <td className="px-4 py-2 text-sm font-mono text-gray-900 dark:text-white border-b border-gray-200 dark:border-gray-700">
+                            <td className="px-4 py-2 text-sm font-mono text-gray-900 border-b border-gray-200">
                                 file_required
                             </td>
-                            <td className="px-4 py-2 text-sm text-gray-600 dark:text-gray-300 border-b border-gray-200 dark:border-gray-700">
+                            <td className="px-4 py-2 text-sm text-gray-600 border-b border-gray-200">
                                 No audio file was provided
                             </td>
                         </tr>
                         <tr>
-                            <td className="px-4 py-2 text-sm font-mono text-gray-900 dark:text-white border-b border-gray-200 dark:border-gray-700">
+                            <td className="px-4 py-2 text-sm font-mono text-gray-900 border-b border-gray-200">
                                 file_too_large
                             </td>
-                            <td className="px-4 py-2 text-sm text-gray-600 dark:text-gray-300 border-b border-gray-200 dark:border-gray-700">
+                            <td className="px-4 py-2 text-sm text-gray-600 border-b border-gray-200">
                                 Audio file exceeds maximum size of 25MB
                             </td>
                         </tr>
                         <tr>
-                            <td className="px-4 py-2 text-sm font-mono text-gray-900 dark:text-white border-b border-gray-200 dark:border-gray-700">
+                            <td className="px-4 py-2 text-sm font-mono text-gray-900 border-b border-gray-200">
                                 duration_too_long
                             </td>
-                            <td className="px-4 py-2 text-sm text-gray-600 dark:text-gray-300 border-b border-gray-200 dark:border-gray-700">
+                            <td className="px-4 py-2 text-sm text-gray-600 border-b border-gray-200">
                                 Audio duration exceeds maximum of 30 minutes
                             </td>
                         </tr>
                         <tr>
-                            <td className="px-4 py-2 text-sm font-mono text-gray-900 dark:text-white border-b border-gray-200 dark:border-gray-700">
+                            <td className="px-4 py-2 text-sm font-mono text-gray-900 border-b border-gray-200">
                                 unsupported_format
                             </td>
-                            <td className="px-4 py-2 text-sm text-gray-600 dark:text-gray-300 border-b border-gray-200 dark:border-gray-700">
+                            <td className="px-4 py-2 text-sm text-gray-600 border-b border-gray-200">
                                 The audio format is not supported
                             </td>
                         </tr>
                         <tr>
-                            <td className="px-4 py-2 text-sm font-mono text-gray-900 dark:text-white border-b border-gray-200 dark:border-gray-700">
+                            <td className="px-4 py-2 text-sm font-mono text-gray-900 border-b border-gray-200">
                                 audio_corrupted
                             </td>
-                            <td className="px-4 py-2 text-sm text-gray-600 dark:text-gray-300 border-b border-gray-200 dark:border-gray-700">
+                            <td className="px-4 py-2 text-sm text-gray-600 border-b border-gray-200">
                                 The audio file is corrupted or unreadable
                             </td>
                         </tr>
                         <tr>
-                            <td className="px-4 py-2 text-sm font-mono text-gray-900 dark:text-white border-b border-gray-200 dark:border-gray-700">
+                            <td className="px-4 py-2 text-sm font-mono text-gray-900 border-b border-gray-200">
                                 no_speech_detected
                             </td>
-                            <td className="px-4 py-2 text-sm text-gray-600 dark:text-gray-300 border-b border-gray-200 dark:border-gray-700">
+                            <td className="px-4 py-2 text-sm text-gray-600 border-b border-gray-200">
                                 No speech was detected in the audio file
                             </td>
                         </tr>
                         <tr>
-                            <td className="px-4 py-2 text-sm font-mono text-gray-900 dark:text-white border-b border-gray-200 dark:border-gray-700">
+                            <td className="px-4 py-2 text-sm font-mono text-gray-900 border-b border-gray-200">
                                 rate_limit_exceeded
                             </td>
-                            <td className="px-4 py-2 text-sm text-gray-600 dark:text-gray-300 border-b border-gray-200 dark:border-gray-700">
+                            <td className="px-4 py-2 text-sm text-gray-600 border-b border-gray-200">
                                 Too many requests, please slow down
                             </td>
                         </tr>
@@ -341,7 +341,7 @@ export default function SpeechToTextApiPage() {
             
             <p>
                 For higher limits, please{" "}
-                <a href="mailto:admin@cantonese.ai" className="text-blue-600 hover:text-blue-800 dark:text-blue-400 dark:hover:text-blue-300">
+                <a href="mailto:admin@cantonese.ai" className="text-blue-600 hover:text-blue-800">
                     contact us
                 </a>
                 .

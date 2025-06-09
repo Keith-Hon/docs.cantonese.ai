@@ -1,6 +1,6 @@
 export default function QuickstartPage() {
   return (
-    <div className="prose prose-lg dark:prose-invert max-w-none">
+    <div className="prose prose-lg max-w-none">
       <h1>Quickstart Guide</h1>
       
       <p>
@@ -15,15 +15,15 @@ export default function QuickstartPage() {
       </p>
       
       <ol>
-        <li>Visit the <a href="/console" className="text-blue-600 hover:text-blue-800 dark:text-blue-400 dark:hover:text-blue-300">API Console</a></li>
+        <li>Visit the <a href="/console" className="text-blue-600 hover:text-blue-800">API Console</a></li>
         <li>Sign up for an account or log in if you already have one</li>
         <li>Navigate to the API Keys section</li>
         <li>Generate a new API key</li>
         <li>Copy and securely store your API key</li>
       </ol>
       
-      <div className="bg-yellow-50 dark:bg-yellow-900/20 border border-yellow-200 dark:border-yellow-800 rounded-lg p-4 not-prose">
-        <p className="text-yellow-800 dark:text-yellow-200 text-sm mb-0">
+      <div className="bg-yellow-50 border border-yellow-200 rounded-lg p-4 not-prose">
+        <p className="text-yellow-800 text-sm mb-0">
           <strong>Important:</strong> Keep your API key secure and never expose it in client-side code. 
           Store it as an environment variable in your application.
         </p>
@@ -194,27 +194,27 @@ textToSpeech();`}
       <p>Now that you've made your first request, explore our other services:</p>
       
       <div className="grid md:grid-cols-2 gap-4 not-prose">
-        <a href="/docs/speech-to-text" className="block p-4 border border-gray-200 dark:border-gray-700 rounded-lg hover:bg-gray-50 dark:hover:bg-gray-800 transition-colors">
-          <h4 className="font-semibold text-gray-900 dark:text-white mb-2">Speech-to-Text</h4>
-          <p className="text-gray-600 dark:text-gray-300 text-sm">Convert audio to text</p>
+        <a href="/docs/speech-to-text" className="block p-4 border border-gray-200 rounded-lg hover:bg-gray-50 transition-colors">
+          <h4 className="font-semibold text-gray-900 mb-2">Speech-to-Text</h4>
+          <p className="text-gray-600 text-sm">Convert audio to text</p>
         </a>
-        <a href="/docs/voice-cloning" className="block p-4 border border-gray-200 dark:border-gray-700 rounded-lg hover:bg-gray-50 dark:hover:bg-gray-800 transition-colors">
-          <h4 className="font-semibold text-gray-900 dark:text-white mb-2">Voice Cloning</h4>
-          <p className="text-gray-600 dark:text-gray-300 text-sm">Create custom voices</p>
+        <a href="/docs/voice-cloning" className="block p-4 border border-gray-200 rounded-lg hover:bg-gray-50 transition-colors">
+          <h4 className="font-semibold text-gray-900 mb-2">Voice Cloning</h4>
+          <p className="text-gray-600 text-sm">Create custom voices</p>
         </a>
-        <a href="/docs/translation" className="block p-4 border border-gray-200 dark:border-gray-700 rounded-lg hover:bg-gray-50 dark:hover:bg-gray-800 transition-colors">
-          <h4 className="font-semibold text-gray-900 dark:text-white mb-2">Translation</h4>
-          <p className="text-gray-600 dark:text-gray-300 text-sm">Translate languages</p>
+        <a href="/docs/translation" className="block p-4 border border-gray-200 rounded-lg hover:bg-gray-50 transition-colors">
+          <h4 className="font-semibold text-gray-900 mb-2">Translation</h4>
+          <p className="text-gray-600 text-sm">Translate languages</p>
         </a>
-        <a href="/docs/chatbot" className="block p-4 border border-gray-200 dark:border-gray-700 rounded-lg hover:bg-gray-50 dark:hover:bg-gray-800 transition-colors">
-          <h4 className="font-semibold text-gray-900 dark:text-white mb-2">Chatbot</h4>
-          <p className="text-gray-600 dark:text-gray-300 text-sm">Interactive AI assistants</p>
+        <a href="/docs/chatbot" className="block p-4 border border-gray-200 rounded-lg hover:bg-gray-50 transition-colors">
+          <h4 className="font-semibold text-gray-900 mb-2">Chatbot</h4>
+          <p className="text-gray-600 text-sm">Interactive AI assistants</p>
         </a>
       </div>
       
       <p>
         For detailed API reference documentation, visit our{" "}
-        <a href="/api-reference" className="text-blue-600 hover:text-blue-800 dark:text-blue-400 dark:hover:text-blue-300">
+        <a href="/api-reference" className="text-blue-600 hover:text-blue-800">
           API Reference
         </a>{" "}
         section.

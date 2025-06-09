@@ -2,13 +2,13 @@ import Image from "next/image";
 
 export default function ExamplesPage() {
   return (
-    <div className="min-h-screen bg-white dark:bg-gray-900">
+    <div className="min-h-screen bg-white">
       {/* Header */}
-      <header className="border-b border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-900">
+      <header className="border-b border-gray-200 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center py-6">
             <div className="flex items-center space-x-4">
-              <a href="/" className="text-2xl font-bold text-blue-600 dark:text-blue-400">
+              <a href="/" className="text-2xl font-bold text-blue-600">
               <Image
                   src="/logo.svg"
                   alt="cantonese.ai"
@@ -17,19 +17,19 @@ export default function ExamplesPage() {
                   className="h-7 w-auto"
                 />
               </a>
-              <span className="text-sm text-gray-500 dark:text-gray-400">Examples</span>
+              <span className="text-sm text-gray-500">Examples</span>
             </div>
             <nav className="hidden md:flex space-x-8">
-              <a href="/docs" className="text-gray-600 hover:text-blue-600 dark:text-gray-300 dark:hover:text-blue-400">
+              <a href="/docs" className="text-gray-600 hover:text-blue-600">
                 Docs
               </a>
-              <a href="/api-reference" className="text-gray-600 hover:text-blue-600 dark:text-gray-300 dark:hover:text-blue-400">
+              <a href="/api-reference" className="text-gray-600 hover:text-blue-600">
                 API Reference
               </a>
-              <a href="/examples" className="text-blue-600 dark:text-blue-400 font-medium">
+              <a href="/examples" className="text-blue-600 font-medium">
                 Examples
               </a>
-              <a href="https://cantonese.ai" className="text-gray-600 hover:text-blue-600 dark:text-gray-300 dark:hover:text-blue-400">
+              <a href="https://cantonese.ai" className="text-gray-600 hover:text-blue-600">
                 Main Site
               </a>
             </nav>
@@ -40,10 +40,10 @@ export default function ExamplesPage() {
       {/* Main Content */}
       <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
         <div className="text-center mb-16">
-          <h1 className="text-4xl font-bold text-gray-900 dark:text-white mb-6">
+          <h1 className="text-4xl font-bold text-gray-900 mb-6">
             Code Examples
           </h1>
-          <p className="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
+          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
             Explore practical examples and use cases for integrating cantonese.ai API 
             into your applications. From simple requests to complex workflows.
           </p>
@@ -51,17 +51,17 @@ export default function ExamplesPage() {
 
         {/* Quick Start Examples */}
         <section className="mb-16">
-          <h2 className="text-3xl font-bold text-gray-900 dark:text-white mb-8">
+          <h2 className="text-3xl font-bold text-gray-900 mb-8">
             Quick Start Examples
           </h2>
           
           <div className="grid lg:grid-cols-2 gap-8">
             {/* Text-to-Speech Example */}
-            <div className="bg-white dark:bg-gray-800 rounded-lg shadow-md border border-gray-200 dark:border-gray-700 p-6">
-              <h3 className="text-xl font-semibold text-gray-900 dark:text-white mb-4">
+            <div className="bg-white rounded-lg shadow-md border border-gray-200 p-6">
+              <h3 className="text-xl font-semibold text-gray-900 mb-4">
                 Text-to-Speech
               </h3>
-              <p className="text-gray-600 dark:text-gray-300 mb-4">
+              <p className="text-gray-600 mb-4">
                 Convert Cantonese text to natural speech
               </p>
               <div className="bg-gray-900 rounded-lg p-4">
@@ -85,11 +85,11 @@ with open("output.mp3", "wb") as f:
             </div>
 
             {/* Speech-to-Text Example */}
-            <div className="bg-white dark:bg-gray-800 rounded-lg shadow-md border border-gray-200 dark:border-gray-700 p-6">
-              <h3 className="text-xl font-semibold text-gray-900 dark:text-white mb-4">
+            <div className="bg-white rounded-lg shadow-md border border-gray-200 p-6">
+              <h3 className="text-xl font-semibold text-gray-900 mb-4">
                 Speech-to-Text
               </h3>
-              <p className="text-gray-600 dark:text-gray-300 mb-4">
+              <p className="text-gray-600 mb-4">
                 Transcribe Cantonese audio to text
               </p>
               <div className="bg-gray-900 rounded-lg p-4">
@@ -113,17 +113,17 @@ print(result["text"])`}
 
         {/* Use Case Examples */}
         <section className="mb-16">
-          <h2 className="text-3xl font-bold text-gray-900 dark:text-white mb-8">
+          <h2 className="text-3xl font-bold text-gray-900 mb-8">
             Use Case Examples
           </h2>
           
           <div className="space-y-8">
             {/* Voice Assistant */}
-            <div className="bg-white dark:bg-gray-800 rounded-lg shadow-md border border-gray-200 dark:border-gray-700 p-6">
-              <h3 className="text-2xl font-semibold text-gray-900 dark:text-white mb-4">
+            <div className="bg-white rounded-lg shadow-md border border-gray-200 p-6">
+              <h3 className="text-2xl font-semibold text-gray-900 mb-4">
                 Cantonese Voice Assistant
               </h3>
-              <p className="text-gray-600 dark:text-gray-300 mb-6">
+              <p className="text-gray-600 mb-6">
                 Build a complete voice assistant that can understand and respond in Cantonese.
               </p>
               <div className="bg-gray-900 rounded-lg p-4">
@@ -196,11 +196,11 @@ assistant.process_voice_input("user_question.wav")`}
             </div>
 
             {/* Language Learning App */}
-            <div className="bg-white dark:bg-gray-800 rounded-lg shadow-md border border-gray-200 dark:border-gray-700 p-6">
-              <h3 className="text-2xl font-semibold text-gray-900 dark:text-white mb-4">
+            <div className="bg-white rounded-lg shadow-md border border-gray-200 p-6">
+              <h3 className="text-2xl font-semibold text-gray-900 mb-4">
                 Language Learning App
               </h3>
-              <p className="text-gray-600 dark:text-gray-300 mb-6">
+              <p className="text-gray-600 mb-6">
                 Create pronunciation practice and translation exercises for Cantonese learners.
               </p>
               <div className="bg-gray-900 rounded-lg p-4">
@@ -307,11 +307,11 @@ print(f"Translation: {translation['translation']}")`}
             </div>
 
             {/* Content Localization */}
-            <div className="bg-white dark:bg-gray-800 rounded-lg shadow-md border border-gray-200 dark:border-gray-700 p-6">
-              <h3 className="text-2xl font-semibold text-gray-900 dark:text-white mb-4">
+            <div className="bg-white rounded-lg shadow-md border border-gray-200 p-6">
+              <h3 className="text-2xl font-semibold text-gray-900 mb-4">
                 Content Localization Pipeline
               </h3>
-              <p className="text-gray-600 dark:text-gray-300 mb-6">
+              <p className="text-gray-600 mb-6">
                 Automate the process of localizing content for Cantonese-speaking audiences.
               </p>
               <div className="bg-gray-900 rounded-lg p-4">
@@ -448,14 +448,14 @@ audiobook_chapters = localizer.create_audio_book(
 
         {/* Integration Examples */}
         <section className="mb-16">
-          <h2 className="text-3xl font-bold text-gray-900 dark:text-white mb-8">
+          <h2 className="text-3xl font-bold text-gray-900 mb-8">
             Framework Integrations
           </h2>
           
           <div className="grid md:grid-cols-2 gap-8">
             {/* React Integration */}
-            <div className="bg-white dark:bg-gray-800 rounded-lg shadow-md border border-gray-200 dark:border-gray-700 p-6">
-              <h3 className="text-xl font-semibold text-gray-900 dark:text-white mb-4">
+            <div className="bg-white rounded-lg shadow-md border border-gray-200 p-6">
+              <h3 className="text-xl font-semibold text-gray-900 mb-4">
                 React Hook
               </h3>
               <div className="bg-gray-900 rounded-lg p-4">
@@ -498,8 +498,8 @@ export const useCantoneseAI = (apiKey) => {
             </div>
 
             {/* Node.js Express */}
-            <div className="bg-white dark:bg-gray-800 rounded-lg shadow-md border border-gray-200 dark:border-gray-700 p-6">
-              <h3 className="text-xl font-semibold text-gray-900 dark:text-white mb-4">
+            <div className="bg-white rounded-lg shadow-md border border-gray-200 p-6">
+              <h3 className="text-xl font-semibold text-gray-900 mb-4">
                 Express.js Middleware
               </h3>
               <div className="bg-gray-900 rounded-lg p-4">
@@ -543,38 +543,38 @@ app.post('/api/speak', express.json(), async (req, res) => {
 
         {/* SDK Examples */}
         <section className="mb-16">
-          <h2 className="text-3xl font-bold text-gray-900 dark:text-white mb-8">
+          <h2 className="text-3xl font-bold text-gray-900 mb-8">
             SDK Examples
           </h2>
           
-          <div className="bg-blue-50 dark:bg-blue-900/20 border border-blue-200 dark:border-blue-800 rounded-lg p-6">
-            <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-4">
+          <div className="bg-blue-50 border border-blue-200 rounded-lg p-6">
+            <h3 className="text-lg font-semibold text-gray-900 mb-4">
               Coming Soon: Official SDKs
             </h3>
-            <p className="text-gray-600 dark:text-gray-300 mb-4">
+            <p className="text-gray-600 mb-4">
               We're working on official SDKs for popular programming languages:
             </p>
             <div className="grid md:grid-cols-4 gap-4">
-              <div className="text-center p-4 bg-white dark:bg-gray-800 rounded-lg">
+              <div className="text-center p-4 bg-white rounded-lg">
                 <div className="text-2xl mb-2">🐍</div>
                 <div className="font-medium">Python SDK</div>
               </div>
-              <div className="text-center p-4 bg-white dark:bg-gray-800 rounded-lg">
+              <div className="text-center p-4 bg-white rounded-lg">
                 <div className="text-2xl mb-2">📱</div>
                 <div className="font-medium">JavaScript SDK</div>
               </div>
-              <div className="text-center p-4 bg-white dark:bg-gray-800 rounded-lg">
+              <div className="text-center p-4 bg-white rounded-lg">
                 <div className="text-2xl mb-2">☕</div>
                 <div className="font-medium">Java SDK</div>
               </div>
-              <div className="text-center p-4 bg-white dark:bg-gray-800 rounded-lg">
+              <div className="text-center p-4 bg-white rounded-lg">
                 <div className="text-2xl mb-2">🦀</div>
                 <div className="font-medium">Rust SDK</div>
               </div>
             </div>
-            <p className="text-sm text-gray-500 dark:text-gray-400 mt-4">
+            <p className="text-sm text-gray-500 mt-4">
               Want to be notified when SDKs are available? 
-              <a href="mailto:admin@cantonese.ai" className="text-blue-600 hover:text-blue-800 dark:text-blue-400 dark:hover:text-blue-300 ml-1">
+              <a href="mailto:admin@cantonese.ai" className="text-blue-600 hover:text-blue-800 ml-1">
                 Contact us
               </a>
             </p>
@@ -583,10 +583,10 @@ app.post('/api/speak', express.json(), async (req, res) => {
 
         {/* Get Started */}
         <section className="text-center">
-          <h2 className="text-3xl font-bold text-gray-900 dark:text-white mb-6">
+          <h2 className="text-3xl font-bold text-gray-900 mb-6">
             Ready to Get Started?
           </h2>
-          <p className="text-lg text-gray-600 dark:text-gray-300 mb-8">
+          <p className="text-lg text-gray-600 mb-8">
             Explore our comprehensive documentation and start building with cantonese.ai today.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
@@ -598,7 +598,7 @@ app.post('/api/speak', express.json(), async (req, res) => {
             </a>
             <a 
               href="/api-reference" 
-              className="border border-gray-300 dark:border-gray-600 text-gray-700 dark:text-gray-300 px-6 py-3 rounded-lg font-medium hover:bg-gray-50 dark:hover:bg-gray-800 transition-colors"
+              className="border border-gray-300 text-gray-700 px-6 py-3 rounded-lg font-medium hover:bg-gray-50 transition-colors"
             >
               API Reference
             </a>

@@ -91,7 +91,7 @@ if (response.ok) {
   };
 
   return (
-    <div className="prose prose-lg dark:prose-invert max-w-none">
+    <div className="prose prose-lg max-w-none">
       <h1>Text-to-Speech</h1>
 
       <p>
@@ -99,9 +99,9 @@ if (response.ok) {
         voice options, audio formats, and customization parameters.
       </p>
 
-      {/* <div className="bg-blue-50 dark:bg-blue-900/20 border border-blue-200 dark:border-blue-800 rounded-lg p-4 not-prose">
+      {/* <div className="bg-blue-50 border border-blue-200 rounded-lg p-4 not-prose">
         <div className="flex items-center space-x-2">
-          <span className="bg-green-100 text-green-800 dark:bg-green-900 dark:text-green-300 px-2 py-1 rounded text-sm font-medium">
+          <span className="bg-green-100 text-green-800 px-2 py-1 rounded text-sm font-medium">
             POST
           </span>
           <code className="text-sm font-mono">/v1/text-to-speech</code>
@@ -111,105 +111,105 @@ if (response.ok) {
       <h2 id="request-body">Request Body</h2>
 
       <div className="overflow-x-auto not-prose">
-        <table className="min-w-full border border-gray-200 dark:border-gray-700">
-          <thead className="bg-gray-50 dark:bg-gray-800">
+        <table className="min-w-full border border-gray-200">
+          <thead className="bg-gray-50">
             <tr>
-              <th className="px-4 py-2 text-left text-sm font-medium text-gray-900 dark:text-white border-b border-gray-200 dark:border-gray-700">
+              <th className="px-4 py-2 text-left text-sm font-medium text-gray-900 border-b border-gray-200">
                 Parameter
               </th>
-              <th className="px-4 py-2 text-left text-sm font-medium text-gray-900 dark:text-white border-b border-gray-200 dark:border-gray-700">
+              <th className="px-4 py-2 text-left text-sm font-medium text-gray-900 border-b border-gray-200">
                 Type
               </th>
-              <th className="px-4 py-2 text-left text-sm font-medium text-gray-900 dark:text-white border-b border-gray-200 dark:border-gray-700">
+              <th className="px-4 py-2 text-left text-sm font-medium text-gray-900 border-b border-gray-200">
                 Required
               </th>
-              <th className="px-4 py-2 text-left text-sm font-medium text-gray-900 dark:text-white border-b border-gray-200 dark:border-gray-700">
+              <th className="px-4 py-2 text-left text-sm font-medium text-gray-900 border-b border-gray-200">
                 Description
               </th>
             </tr>
           </thead>
-          <tbody className="bg-white dark:bg-gray-900">
+          <tbody className="bg-white">
             <tr>
-              <td className="px-4 py-2 text-sm font-mono text-gray-900 dark:text-white border-b border-gray-200 dark:border-gray-700">
+              <td className="px-4 py-2 text-sm font-mono text-gray-900 border-b border-gray-200">
                 text
               </td>
-              <td className="px-4 py-2 text-sm text-gray-600 dark:text-gray-300 border-b border-gray-200 dark:border-gray-700">
+              <td className="px-4 py-2 text-sm text-gray-600 border-b border-gray-200">
                 string
               </td>
-              <td className="px-4 py-2 text-sm text-gray-600 dark:text-gray-300 border-b border-gray-200 dark:border-gray-700">
+              <td className="px-4 py-2 text-sm text-gray-600 border-b border-gray-200">
                 Yes
               </td>
-              <td className="px-4 py-2 text-sm text-gray-600 dark:text-gray-300 border-b border-gray-200 dark:border-gray-700">
+              <td className="px-4 py-2 text-sm text-gray-600 border-b border-gray-200">
                 The text to convert to speech. Maximum 5000 characters.
               </td>
             </tr>
             <tr>
-              <td className="px-4 py-2 text-sm font-mono text-gray-900 dark:text-white border-b border-gray-200 dark:border-gray-700">
+              <td className="px-4 py-2 text-sm font-mono text-gray-900 border-b border-gray-200">
                 voice
               </td>
-              <td className="px-4 py-2 text-sm text-gray-600 dark:text-gray-300 border-b border-gray-200 dark:border-gray-700">
+              <td className="px-4 py-2 text-sm text-gray-600 border-b border-gray-200">
                 string
               </td>
-              <td className="px-4 py-2 text-sm text-gray-600 dark:text-gray-300 border-b border-gray-200 dark:border-gray-700">
+              <td className="px-4 py-2 text-sm text-gray-600 border-b border-gray-200">
                 No
               </td>
-              <td className="px-4 py-2 text-sm text-gray-600 dark:text-gray-300 border-b border-gray-200 dark:border-gray-700">
+              <td className="px-4 py-2 text-sm text-gray-600 border-b border-gray-200">
                 Voice ID to use. Defaults to "default". See available voices below.
               </td>
             </tr>
             <tr>
-              <td className="px-4 py-2 text-sm font-mono text-gray-900 dark:text-white border-b border-gray-200 dark:border-gray-700">
+              <td className="px-4 py-2 text-sm font-mono text-gray-900 border-b border-gray-200">
                 language
               </td>
-              <td className="px-4 py-2 text-sm text-gray-600 dark:text-gray-300 border-b border-gray-200 dark:border-gray-700">
+              <td className="px-4 py-2 text-sm text-gray-600 border-b border-gray-200">
                 string
               </td>
-              <td className="px-4 py-2 text-sm text-gray-600 dark:text-gray-300 border-b border-gray-200 dark:border-gray-700">
+              <td className="px-4 py-2 text-sm text-gray-600 border-b border-gray-200">
                 No
               </td>
-              <td className="px-4 py-2 text-sm text-gray-600 dark:text-gray-300 border-b border-gray-200 dark:border-gray-700">
+              <td className="px-4 py-2 text-sm text-gray-600 border-b border-gray-200">
                 Language code. Defaults to "cantonese". Options: "cantonese", "english", "mandarin".
               </td>
             </tr>
             <tr>
-              <td className="px-4 py-2 text-sm font-mono text-gray-900 dark:text-white border-b border-gray-200 dark:border-gray-700">
+              <td className="px-4 py-2 text-sm font-mono text-gray-900 border-b border-gray-200">
                 format
               </td>
-              <td className="px-4 py-2 text-sm text-gray-600 dark:text-gray-300 border-b border-gray-200 dark:border-gray-700">
+              <td className="px-4 py-2 text-sm text-gray-600 border-b border-gray-200">
                 string
               </td>
-              <td className="px-4 py-2 text-sm text-gray-600 dark:text-gray-300 border-b border-gray-200 dark:border-gray-700">
+              <td className="px-4 py-2 text-sm text-gray-600 border-b border-gray-200">
                 No
               </td>
-              <td className="px-4 py-2 text-sm text-gray-600 dark:text-gray-300 border-b border-gray-200 dark:border-gray-700">
+              <td className="px-4 py-2 text-sm text-gray-600 border-b border-gray-200">
                 Audio format. Defaults to "mp3". Options: "mp3", "wav", "ogg", "flac".
               </td>
             </tr>
             <tr>
-              <td className="px-4 py-2 text-sm font-mono text-gray-900 dark:text-white border-b border-gray-200 dark:border-gray-700">
+              <td className="px-4 py-2 text-sm font-mono text-gray-900 border-b border-gray-200">
                 speed
               </td>
-              <td className="px-4 py-2 text-sm text-gray-600 dark:text-gray-300 border-b border-gray-200 dark:border-gray-700">
+              <td className="px-4 py-2 text-sm text-gray-600 border-b border-gray-200">
                 number
               </td>
-              <td className="px-4 py-2 text-sm text-gray-600 dark:text-gray-300 border-b border-gray-200 dark:border-gray-700">
+              <td className="px-4 py-2 text-sm text-gray-600 border-b border-gray-200">
                 No
               </td>
-              <td className="px-4 py-2 text-sm text-gray-600 dark:text-gray-300 border-b border-gray-200 dark:border-gray-700">
+              <td className="px-4 py-2 text-sm text-gray-600 border-b border-gray-200">
                 Speech speed multiplier. Range: 0.5-3.0. Defaults to 1.0.
               </td>
             </tr>
             <tr>
-              <td className="px-4 py-2 text-sm font-mono text-gray-900 dark:text-white border-b border-gray-200 dark:border-gray-700">
+              <td className="px-4 py-2 text-sm font-mono text-gray-900 border-b border-gray-200">
                 pitch
               </td>
-              <td className="px-4 py-2 text-sm text-gray-600 dark:text-gray-300 border-b border-gray-200 dark:border-gray-700">
+              <td className="px-4 py-2 text-sm text-gray-600 border-b border-gray-200">
                 number
               </td>
-              <td className="px-4 py-2 text-sm text-gray-600 dark:text-gray-300 border-b border-gray-200 dark:border-gray-700">
+              <td className="px-4 py-2 text-sm text-gray-600 border-b border-gray-200">
                 No
               </td>
-              <td className="px-4 py-2 text-sm text-gray-600 dark:text-gray-300 border-b border-gray-200 dark:border-gray-700">
+              <td className="px-4 py-2 text-sm text-gray-600 border-b border-gray-200">
                 Pitch adjustment in semitones. Range: -12 to +12. Defaults to 0.
               </td>
             </tr>
@@ -220,21 +220,21 @@ if (response.ok) {
       {/* <h2 id="available-voices">Available Voices</h2>
 
       <div className="grid md:grid-cols-2 gap-4 not-prose">
-        <div className="border border-gray-200 dark:border-gray-700 rounded-lg p-4">
-          <h4 className="font-semibold text-gray-900 dark:text-white mb-2">default</h4>
-          <p className="text-sm text-gray-600 dark:text-gray-300">Standard Cantonese voice, neutral tone</p>
+        <div className="border border-gray-200 rounded-lg p-4">
+          <h4 className="font-semibold text-gray-900 mb-2">default</h4>
+          <p className="text-sm text-gray-600">Standard Cantonese voice, neutral tone</p>
         </div>
-        <div className="border border-gray-200 dark:border-gray-700 rounded-lg p-4">
-          <h4 className="font-semibold text-gray-900 dark:text-white mb-2">female-young</h4>
-          <p className="text-sm text-gray-600 dark:text-gray-300">Young female voice, friendly tone</p>
+        <div className="border border-gray-200 rounded-lg p-4">
+          <h4 className="font-semibold text-gray-900 mb-2">female-young</h4>
+          <p className="text-sm text-gray-600">Young female voice, friendly tone</p>
         </div>
-        <div className="border border-gray-200 dark:border-gray-700 rounded-lg p-4">
-          <h4 className="font-semibold text-gray-900 dark:text-white mb-2">male-mature</h4>
-          <p className="text-sm text-gray-600 dark:text-gray-300">Mature male voice, professional tone</p>
+        <div className="border border-gray-200 rounded-lg p-4">
+          <h4 className="font-semibold text-gray-900 mb-2">male-mature</h4>
+          <p className="text-sm text-gray-600">Mature male voice, professional tone</p>
         </div>
-        <div className="border border-gray-200 dark:border-gray-700 rounded-lg p-4">
-          <h4 className="font-semibold text-gray-900 dark:text-white mb-2">child</h4>
-          <p className="text-sm text-gray-600 dark:text-gray-300">Child voice, playful tone</p>
+        <div className="border border-gray-200 rounded-lg p-4">
+          <h4 className="font-semibold text-gray-900 mb-2">child</h4>
+          <p className="text-sm text-gray-600">Child voice, playful tone</p>
         </div>
       </div> */}
 
@@ -332,55 +332,55 @@ else:
       <h2 id="common-errors">Common Error Codes</h2>
 
       <div className="overflow-x-auto not-prose">
-        <table className="min-w-full border border-gray-200 dark:border-gray-700">
-          <thead className="bg-gray-50 dark:bg-gray-800">
+        <table className="min-w-full border border-gray-200">
+          <thead className="bg-gray-50">
             <tr>
-              <th className="px-4 py-2 text-left text-sm font-medium text-gray-900 dark:text-white border-b border-gray-200 dark:border-gray-700">
+              <th className="px-4 py-2 text-left text-sm font-medium text-gray-900 border-b border-gray-200">
                 Error Code
               </th>
-              <th className="px-4 py-2 text-left text-sm font-medium text-gray-900 dark:text-white border-b border-gray-200 dark:border-gray-700">
+              <th className="px-4 py-2 text-left text-sm font-medium text-gray-900 border-b border-gray-200">
                 Description
               </th>
             </tr>
           </thead>
-          <tbody className="bg-white dark:bg-gray-900">
+          <tbody className="bg-white">
             <tr>
-              <td className="px-4 py-2 text-sm font-mono text-gray-900 dark:text-white border-b border-gray-200 dark:border-gray-700">
+              <td className="px-4 py-2 text-sm font-mono text-gray-900 border-b border-gray-200">
                 text_required
               </td>
-              <td className="px-4 py-2 text-sm text-gray-600 dark:text-gray-300 border-b border-gray-200 dark:border-gray-700">
+              <td className="px-4 py-2 text-sm text-gray-600 border-b border-gray-200">
                 The text parameter is required
               </td>
             </tr>
             <tr>
-              <td className="px-4 py-2 text-sm font-mono text-gray-900 dark:text-white border-b border-gray-200 dark:border-gray-700">
+              <td className="px-4 py-2 text-sm font-mono text-gray-900 border-b border-gray-200">
                 text_too_long
               </td>
-              <td className="px-4 py-2 text-sm text-gray-600 dark:text-gray-300 border-b border-gray-200 dark:border-gray-700">
+              <td className="px-4 py-2 text-sm text-gray-600 border-b border-gray-200">
                 Text exceeds maximum length of 5000 characters
               </td>
             </tr>
             <tr>
-              <td className="px-4 py-2 text-sm font-mono text-gray-900 dark:text-white border-b border-gray-200 dark:border-gray-700">
+              <td className="px-4 py-2 text-sm font-mono text-gray-900 border-b border-gray-200">
                 invalid_voice
               </td>
-              <td className="px-4 py-2 text-sm text-gray-600 dark:text-gray-300 border-b border-gray-200 dark:border-gray-700">
+              <td className="px-4 py-2 text-sm text-gray-600 border-b border-gray-200">
                 The specified voice ID is not available
               </td>
             </tr>
             <tr>
-              <td className="px-4 py-2 text-sm font-mono text-gray-900 dark:text-white border-b border-gray-200 dark:border-gray-700">
+              <td className="px-4 py-2 text-sm font-mono text-gray-900 border-b border-gray-200">
                 invalid_format
               </td>
-              <td className="px-4 py-2 text-sm text-gray-600 dark:text-gray-300 border-b border-gray-200 dark:border-gray-700">
+              <td className="px-4 py-2 text-sm text-gray-600 border-b border-gray-200">
                 The specified audio format is not supported
               </td>
             </tr>
             <tr>
-              <td className="px-4 py-2 text-sm font-mono text-gray-900 dark:text-white border-b border-gray-200 dark:border-gray-700">
+              <td className="px-4 py-2 text-sm font-mono text-gray-900 border-b border-gray-200">
                 rate_limit_exceeded
               </td>
-              <td className="px-4 py-2 text-sm text-gray-600 dark:text-gray-300 border-b border-gray-200 dark:border-gray-700">
+              <td className="px-4 py-2 text-sm text-gray-600 border-b border-gray-200">
                 Too many requests, please slow down
               </td>
             </tr>
@@ -402,7 +402,7 @@ else:
 
       <p>
         For higher limits, please{" "}
-        <a href="mailto:admin@cantonese.ai" className="text-blue-600 hover:text-blue-800 dark:text-blue-400 dark:hover:text-blue-300">
+        <a href="mailto:admin@cantonese.ai" className="text-blue-600 hover:text-blue-800">
           contact us
         </a>
         .
