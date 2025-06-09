@@ -1,0 +1,13 @@
+<svg version="1.2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 138 27" width="138" height="27">
+	<title>logo-svg</title>
+	<style>
+		tspan { white-space:pre } 
+		.t0 { font-size: 20px;fill: #000000;font-weight: 400;font-family: "AlbertSans-Regular", "Albert Sans" } 
+	</style>
+	<g id="Layer">
+		<text id="cantonese.ai" style="transform: matrix(1,0,0,1,12,19)" >
+			<tspan x="0" y="0" class="t0">cantonese.ai
+</tspan>
+		</text>
+	</g>
+</svg>

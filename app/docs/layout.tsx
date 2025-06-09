@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import Image from "next/image";
 import { useState } from "react";
 
 const navigation = [
@@ -52,7 +53,13 @@ export default function DocsLayout({
           <div className="flex justify-between items-center py-4">
             <div className="flex items-center space-x-4">
               <Link href="/" className="text-2xl font-bold text-blue-600">
-                cantonese.ai
+              <Image
+                  src="/logo.svg"
+                  alt="cantonese.ai"
+                  width={138}
+                  height={27}
+                  className="h-7 w-auto"
+                />
               </Link>
               <span className="text-sm text-gray-500">API Documentation</span>
             </div>

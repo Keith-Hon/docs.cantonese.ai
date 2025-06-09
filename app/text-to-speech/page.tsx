@@ -1,24 +1,115 @@
+import CodeExample from "@/app/examples/codeExample";
+
 export default function TextToSpeechApiPage() {
+
+  const ttsExamples = {
+    curl: {
+      language: 'bash',
+      code: `curl -X POST "https://cantonese.ai/api/tts" \\
+  -H "Content-Type: application/json" \\
+  -d '{
+    "api_key": "YOUR_API_KEY",
+    "text": "你今日食咗飯未？",
+    "frame_rate": "24000",
+    "speed": 1,
+    "duration": 2,
+    "pitch": 0,
+    "lang": "cantonese",
+    "output_extension": "wav",
+    "voice_id": "2725cf0f-efe2-4132-9e06-62ad84b2973d",
+    "should_enhance": false,
+    "should_convert_from_simplified_to_traditional": true
+  }' \\
+  --output output.wav`
+    },
+    python: {
+      language: 'python',
+      code: `import requests
+import json
+
+url = "https://cantonese.ai/api/tts"
+
+payload = json.dumps({
+  "api_key": "YOUR_API_KEY",
+  "text": "你今日食咗飯未？",  
+  "frame_rate": "24000",
+  "speed": 1,
+  "duration": 2,
+  "pitch": 0,
+  "lang": "cantonese",
+  "output_extension": "wav",
+  "voice_id": "2725cf0f-efe2-4132-9e06-62ad84b2973d",
+  "should_enhance": False,
+  "should_convert_from_simplified_to_traditional": True
+})
+headers = {
+  'Content-Type': 'application/json'
+}
+
+response = requests.request("POST", url, headers=headers, data=payload)
+
+with open('output.wav', 'wb') as f:
+    f.write(response.content);`
+    },
+    javascript: {
+      language: 'javascript',
+      code: `const url = "https://cantonese.ai/api/tts";
+
+const payload = {
+  api_key: "YOUR_API_KEY",
+  text: "你今日食咗飯未？",
+  frame_rate: "24000",
+  speed: 1,
+  duration: 2,
+  pitch: 0,
+  lang: "cantonese",
+  output_extension: "wav",
+  voice_id: "2725cf0f-efe2-4132-9e06-62ad84b2973d",
+  should_enhance: false,
+  should_convert_from_simplified_to_traditional: true
+};
+
+const response = await fetch(url, {
+  method: 'POST',
+  headers: {
+    'Content-Type': 'application/json'
+  },
+  body: JSON.stringify(payload)
+});
+
+if (response.ok) {
+  const audioBlob = await response.blob();
+  const url = window.URL.createObjectURL(audioBlob);
+  const a = document.createElement('a');
+  a.href = url;
+  a.download = 'output.wav';
+  a.click();
+} else {
+  console.error('Error:', response.status);
+}`
+    },
+  };
+
   return (
     <div className="prose prose-lg dark:prose-invert max-w-none">
       <h1>Text-to-Speech</h1>
-      
+
       <p>
-        Convert text to natural-sounding Cantonese speech. This endpoint supports multiple 
+        Convert text to natural-sounding Cantonese speech. This endpoint supports multiple
         voice options, audio formats, and customization parameters.
       </p>
 
-      <div className="bg-blue-50 dark:bg-blue-900/20 border border-blue-200 dark:border-blue-800 rounded-lg p-4 not-prose">
+      {/* <div className="bg-blue-50 dark:bg-blue-900/20 border border-blue-200 dark:border-blue-800 rounded-lg p-4 not-prose">
         <div className="flex items-center space-x-2">
           <span className="bg-green-100 text-green-800 dark:bg-green-900 dark:text-green-300 px-2 py-1 rounded text-sm font-medium">
             POST
           </span>
           <code className="text-sm font-mono">/v1/text-to-speech</code>
         </div>
-      </div>
+      </div> */}
 
       <h2 id="request-body">Request Body</h2>
-      
+
       <div className="overflow-x-auto not-prose">
         <table className="min-w-full border border-gray-200 dark:border-gray-700">
           <thead className="bg-gray-50 dark:bg-gray-800">
@@ -126,8 +217,8 @@ export default function TextToSpeechApiPage() {
         </table>
       </div>
 
-      <h2 id="available-voices">Available Voices</h2>
-      
+      {/* <h2 id="available-voices">Available Voices</h2>
+
       <div className="grid md:grid-cols-2 gap-4 not-prose">
         <div className="border border-gray-200 dark:border-gray-700 rounded-lg p-4">
           <h4 className="font-semibold text-gray-900 dark:text-white mb-2">default</h4>
@@ -145,9 +236,9 @@ export default function TextToSpeechApiPage() {
           <h4 className="font-semibold text-gray-900 dark:text-white mb-2">child</h4>
           <p className="text-sm text-gray-600 dark:text-gray-300">Child voice, playful tone</p>
         </div>
-      </div>
+      </div> */}
 
-      <h2 id="example-request">Example Request</h2>
+      {/* <h2 id="example-request">Example Request</h2>
       
       <div className="bg-gray-900 rounded-lg p-4 not-prose">
         <pre className="text-green-400 text-sm overflow-x-auto">
@@ -164,13 +255,22 @@ export default function TextToSpeechApiPage() {
   }' \\
   --output audio.mp3`}
         </pre>
-      </div>
+      </div> */}
 
-      <h2 id="python-example">Python Example</h2>
-      
+      <section className="mb-16">
+        <CodeExample
+          title="Example Request"
+          description="Here are examples of how to transcribe audio files using different programming languages."
+          examples={ttsExamples}
+        />
+      </section>
+
+
+      {/* <h2 id="python-example">Python Example</h2>
+
       <div className="bg-gray-900 rounded-lg p-4 not-prose">
         <pre className="text-blue-400 text-sm overflow-x-auto">
-{`import requests
+          {`import requests
 import os
 
 api_key = os.getenv("CANTONESE_AI_API_KEY")
@@ -200,26 +300,25 @@ else:
     print(f"Error: {response.status_code}")
     print(response.json())`}
         </pre>
-      </div>
+      </div> */}
 
       <h2 id="response">Response</h2>
-      
+
       <p>
-        On success, the response body contains the audio file in the requested format. 
+        On success, the response body contains the audio file in the requested format.
         The response headers include:
       </p>
-      
+
       <ul>
         <li><code>Content-Type</code>: The MIME type of the audio file</li>
         <li><code>Content-Length</code>: Size of the audio file in bytes</li>
-        <li><code>X-Audio-Duration</code>: Duration of the audio in seconds</li>
       </ul>
 
-      <h2 id="error-responses">Error Responses</h2>
-      
+      {/* <h2 id="error-responses">Error Responses</h2>
+
       <div className="bg-gray-900 rounded-lg p-4 not-prose">
         <pre className="text-red-400 text-sm overflow-x-auto">
-{`{
+          {`{
   "error": {
     "code": "text_too_long",
     "message": "Text exceeds maximum length of 5000 characters",
@@ -231,7 +330,7 @@ else:
       </div>
 
       <h2 id="common-errors">Common Error Codes</h2>
-      
+
       <div className="overflow-x-auto not-prose">
         <table className="min-w-full border border-gray-200 dark:border-gray-700">
           <thead className="bg-gray-50 dark:bg-gray-800">
@@ -290,24 +389,24 @@ else:
       </div>
 
       <h2 id="rate-limits">Rate Limits</h2>
-      
+
       <p>
         The Text-to-Speech endpoint has the following rate limits:
       </p>
-      
+
       <ul>
         <li><strong>Free tier:</strong> 100 requests per hour, 10,000 characters per day</li>
         <li><strong>Pro tier:</strong> 1,000 requests per hour, 100,000 characters per day</li>
         <li><strong>Enterprise tier:</strong> Custom limits based on your plan</li>
       </ul>
-      
+
       <p>
         For higher limits, please{" "}
         <a href="mailto:admin@cantonese.ai" className="text-blue-600 hover:text-blue-800 dark:text-blue-400 dark:hover:text-blue-300">
           contact us
         </a>
         .
-      </p>
+      </p> */}
     </div>
   );
 } 

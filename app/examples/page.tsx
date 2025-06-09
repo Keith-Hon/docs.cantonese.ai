@@ -1,3 +1,5 @@
+import Image from "next/image";
+
 export default function ExamplesPage() {
   return (
     <div className="min-h-screen bg-white dark:bg-gray-900">
@@ -7,7 +9,13 @@ export default function ExamplesPage() {
           <div className="flex justify-between items-center py-6">
             <div className="flex items-center space-x-4">
               <a href="/" className="text-2xl font-bold text-blue-600 dark:text-blue-400">
-                cantonese.ai
+              <Image
+                  src="/logo.svg"
+                  alt="cantonese.ai"
+                  width={138}
+                  height={27}
+                  className="h-7 w-auto"
+                />
               </a>
               <span className="text-sm text-gray-500 dark:text-gray-400">Examples</span>
             </div>
