@@ -131,6 +131,20 @@ if (response.ok) {
           <tbody className="bg-white">
             <tr>
               <td className="px-4 py-2 text-sm font-mono text-gray-900 border-b border-gray-200">
+                api_key
+              </td>
+              <td className="px-4 py-2 text-sm text-gray-600 border-b border-gray-200">
+                string
+              </td>
+              <td className="px-4 py-2 text-sm text-gray-600 border-b border-gray-200">
+                Yes
+              </td>
+              <td className="px-4 py-2 text-sm text-gray-600 border-b border-gray-200">
+                Your <a href="https://cantonese.ai/api-keys" className="text-blue-600 hover:text-blue-800">API key</a> for authentication.
+              </td>
+            </tr>
+            <tr>
+              <td className="px-4 py-2 text-sm font-mono text-gray-900 border-b border-gray-200">
                 text
               </td>
               <td className="px-4 py-2 text-sm text-gray-600 border-b border-gray-200">
@@ -145,7 +159,7 @@ if (response.ok) {
             </tr>
             <tr>
               <td className="px-4 py-2 text-sm font-mono text-gray-900 border-b border-gray-200">
-                voice
+                frame_rate
               </td>
               <td className="px-4 py-2 text-sm text-gray-600 border-b border-gray-200">
                 string
@@ -154,35 +168,7 @@ if (response.ok) {
                 No
               </td>
               <td className="px-4 py-2 text-sm text-gray-600 border-b border-gray-200">
-                Voice ID to use. Defaults to "default". See available voices below.
-              </td>
-            </tr>
-            <tr>
-              <td className="px-4 py-2 text-sm font-mono text-gray-900 border-b border-gray-200">
-                language
-              </td>
-              <td className="px-4 py-2 text-sm text-gray-600 border-b border-gray-200">
-                string
-              </td>
-              <td className="px-4 py-2 text-sm text-gray-600 border-b border-gray-200">
-                No
-              </td>
-              <td className="px-4 py-2 text-sm text-gray-600 border-b border-gray-200">
-                Language code. Defaults to "cantonese". Options: "cantonese", "english", "mandarin".
-              </td>
-            </tr>
-            <tr>
-              <td className="px-4 py-2 text-sm font-mono text-gray-900 border-b border-gray-200">
-                format
-              </td>
-              <td className="px-4 py-2 text-sm text-gray-600 border-b border-gray-200">
-                string
-              </td>
-              <td className="px-4 py-2 text-sm text-gray-600 border-b border-gray-200">
-                No
-              </td>
-              <td className="px-4 py-2 text-sm text-gray-600 border-b border-gray-200">
-                Audio format. Defaults to "mp3". Options: "mp3", "wav", "ogg", "flac".
+                Audio frame rate in Hz. Common values: "16000", "24000", "44100". Defaults to "24000".
               </td>
             </tr>
             <tr>
@@ -201,6 +187,20 @@ if (response.ok) {
             </tr>
             <tr>
               <td className="px-4 py-2 text-sm font-mono text-gray-900 border-b border-gray-200">
+                duration
+              </td>
+              <td className="px-4 py-2 text-sm text-gray-600 border-b border-gray-200">
+                number
+              </td>
+              <td className="px-4 py-2 text-sm text-gray-600 border-b border-gray-200">
+                No
+              </td>
+              <td className="px-4 py-2 text-sm text-gray-600 border-b border-gray-200">
+                Target duration multiplier. Range: 0.5-3.0. Defaults to 1.0.
+              </td>
+            </tr>
+            <tr>
+              <td className="px-4 py-2 text-sm font-mono text-gray-900 border-b border-gray-200">
                 pitch
               </td>
               <td className="px-4 py-2 text-sm text-gray-600 border-b border-gray-200">
@@ -211,6 +211,76 @@ if (response.ok) {
               </td>
               <td className="px-4 py-2 text-sm text-gray-600 border-b border-gray-200">
                 Pitch adjustment in semitones. Range: -12 to +12. Defaults to 0.
+              </td>
+            </tr>
+            <tr>
+              <td className="px-4 py-2 text-sm font-mono text-gray-900 border-b border-gray-200">
+                lang
+              </td>
+              <td className="px-4 py-2 text-sm text-gray-600 border-b border-gray-200">
+                string
+              </td>
+              <td className="px-4 py-2 text-sm text-gray-600 border-b border-gray-200">
+                No
+              </td>
+              <td className="px-4 py-2 text-sm text-gray-600 border-b border-gray-200">
+                Language code. Defaults to "cantonese". Options: "cantonese", "english", "mandarin".
+              </td>
+            </tr>
+            <tr>
+              <td className="px-4 py-2 text-sm font-mono text-gray-900 border-b border-gray-200">
+                output_extension
+              </td>
+              <td className="px-4 py-2 text-sm text-gray-600 border-b border-gray-200">
+                string
+              </td>
+              <td className="px-4 py-2 text-sm text-gray-600 border-b border-gray-200">
+                No
+              </td>
+              <td className="px-4 py-2 text-sm text-gray-600 border-b border-gray-200">
+                Audio output format. Defaults to "mp3". Options: "mp3", "wav", "ogg", "flac".
+              </td>
+            </tr>
+            <tr>
+              <td className="px-4 py-2 text-sm font-mono text-gray-900 border-b border-gray-200">
+                voice_id
+              </td>
+              <td className="px-4 py-2 text-sm text-gray-600 border-b border-gray-200">
+                string
+              </td>
+              <td className="px-4 py-2 text-sm text-gray-600 border-b border-gray-200">
+                No
+              </td>
+              <td className="px-4 py-2 text-sm text-gray-600 border-b border-gray-200">
+                Unique identifier for the voice to use. Defaults to system default voice.
+              </td>
+            </tr>
+            <tr>
+              <td className="px-4 py-2 text-sm font-mono text-gray-900 border-b border-gray-200">
+                should_enhance
+              </td>
+              <td className="px-4 py-2 text-sm text-gray-600 border-b border-gray-200">
+                boolean
+              </td>
+              <td className="px-4 py-2 text-sm text-gray-600 border-b border-gray-200">
+                No
+              </td>
+              <td className="px-4 py-2 text-sm text-gray-600 border-b border-gray-200">
+                Whether to apply audio enhancement. Defaults to false.
+              </td>
+            </tr>
+            <tr>
+              <td className="px-4 py-2 text-sm font-mono text-gray-900 border-b border-gray-200">
+                should_convert_from_simplified_to_traditional
+              </td>
+              <td className="px-4 py-2 text-sm text-gray-600 border-b border-gray-200">
+                boolean
+              </td>
+              <td className="px-4 py-2 text-sm text-gray-600 border-b border-gray-200">
+                No
+              </td>
+              <td className="px-4 py-2 text-sm text-gray-600 border-b border-gray-200">
+                Whether to convert simplified Chinese to traditional Chinese before synthesis. Defaults to false.
               </td>
             </tr>
           </tbody>

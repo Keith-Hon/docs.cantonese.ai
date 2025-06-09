@@ -144,39 +144,11 @@ export default function SpeechToTextApiPage() {
                                 Enable speaker diarization to identify different speakers. Defaults to false.
                             </td>
                         </tr>
-                        <tr>
-                            <td className="px-4 py-2 text-sm font-mono text-gray-900 border-b border-gray-200">
-                                language
-                            </td>
-                            <td className="px-4 py-2 text-sm text-gray-600 border-b border-gray-200">
-                                string
-                            </td>
-                            <td className="px-4 py-2 text-sm text-gray-600 border-b border-gray-200">
-                                No
-                            </td>
-                            <td className="px-4 py-2 text-sm text-gray-600 border-b border-gray-200">
-                                Source language hint. Defaults to "auto". Options: "auto", "cantonese", "english", "mandarin".
-                            </td>
-                        </tr>
-                        <tr>
-                            <td className="px-4 py-2 text-sm font-mono text-gray-900 border-b border-gray-200">
-                                model
-                            </td>
-                            <td className="px-4 py-2 text-sm text-gray-600 border-b border-gray-200">
-                                string
-                            </td>
-                            <td className="px-4 py-2 text-sm text-gray-600 border-b border-gray-200">
-                                No
-                            </td>
-                            <td className="px-4 py-2 text-sm text-gray-600 border-b border-gray-200">
-                                Transcription model to use. Defaults to "general". Options: "general", "medical", "legal", "conversational".
-                            </td>
-                        </tr>
                     </tbody>
                 </table>
             </div>
 
-            <h2 id="supported-formats">Supported Audio Formats</h2>
+            {/* <h2 id="supported-formats">Supported Audio Formats</h2>
             
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4 not-prose">
                 <div className="border border-gray-200 rounded-lg p-4">
@@ -199,7 +171,7 @@ export default function SpeechToTextApiPage() {
                     <h4 className="font-semibold text-gray-900 mb-2">OGG</h4>
                     <p className="text-sm text-gray-600">Open source format</p>
                 </div>
-            </div>
+            </div> */}
 
             <section className="mb-16">
                 <CodeExample

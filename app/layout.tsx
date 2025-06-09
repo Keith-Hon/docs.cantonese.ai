@@ -109,7 +109,7 @@ export default function RootLayout({
             {/* Main content */}
             <main className="flex-1 max-w-none p-8 bg-white">
               <div className="max-w-4xl">
-                {children}
+        {children}
               </div>
             </main>
           </div>
