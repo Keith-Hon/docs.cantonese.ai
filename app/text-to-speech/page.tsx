@@ -14,7 +14,7 @@ export default function TextToSpeechApiPage() {
     "speed": 1,
     "duration": 2,
     "pitch": 0,
-    "lang": "cantonese",
+    "language": "cantonese",
     "output_extension": "wav",
     "voice_id": "2725cf0f-efe2-4132-9e06-62ad84b2973d",
     "should_enhance": false,
@@ -36,7 +36,7 @@ payload = json.dumps({
   "speed": 1,
   "duration": 2,
   "pitch": 0,
-  "lang": "cantonese",
+  "language": "cantonese",
   "output_extension": "wav",
   "voice_id": "2725cf0f-efe2-4132-9e06-62ad84b2973d",
   "should_enhance": False,
@@ -62,7 +62,7 @@ const payload = {
   speed: 1,
   duration: 2,
   pitch: 0,
-  lang: "cantonese",
+  language: "cantonese",
   output_extension: "wav",
   voice_id: "2725cf0f-efe2-4132-9e06-62ad84b2973d",
   should_enhance: false,
@@ -196,7 +196,7 @@ if (response.ok) {
                 No
               </td>
               <td className="px-4 py-2 text-sm text-gray-600 border-b border-gray-200">
-                Target duration multiplier. Range: 0.5-3.0. Defaults to 1.0.
+                Target duration (seconds).
               </td>
             </tr>
             <tr>
@@ -215,7 +215,7 @@ if (response.ok) {
             </tr>
             <tr>
               <td className="px-4 py-2 text-sm font-mono text-gray-900 border-b border-gray-200">
-                lang
+                language
               </td>
               <td className="px-4 py-2 text-sm text-gray-600 border-b border-gray-200">
                 string

@@ -113,7 +113,7 @@ export default function SpeechToTextApiPage() {
                                 Yes
                             </td>
                             <td className="px-4 py-2 text-sm text-gray-600 border-b border-gray-200">
-                                Audio file to transcribe. Supported formats: wav, mp3, m4a, flac, ogg. Max size: 25MB, max duration: 30 minutes.
+                                Audio file to transcribe. Supported formats: wav, mp3, m4a, flac, ogg.
                             </td>
                         </tr>
                         <tr>
