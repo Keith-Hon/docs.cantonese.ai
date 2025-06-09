@@ -99,7 +99,7 @@ export default function SpeechToTextApiPage() {
                                 Yes
                             </td>
                             <td className="px-4 py-2 text-sm text-gray-600 border-b border-gray-200">
-                                Your API key for authentication
+                                Your <a href="https://cantonese.ai/api-keys" className="text-blue-600 hover:text-blue-800">API key</a> for authentication
                             </td>
                         </tr>
                         <tr>
