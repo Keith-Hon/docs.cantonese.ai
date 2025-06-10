@@ -4,8 +4,9 @@ import { Geist, Geist_Mono } from "next/font/google";
 import Link from "next/link";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import "./globals.css";
+import Analytics from "./components/Analytics";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -47,6 +48,9 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased bg-white text-black`}
       >
+        {/* Google Analytics Scripts */}
+        <Analytics />
+
         <div className="min-h-screen bg-white">
           {/* Header */}
           <header className="border-b border-gray-200 bg-white sticky top-0 z-50">
