@@ -1,10 +1,11 @@
 import CodeExample from "@/app/components/CodeExample";
 // import { openaiExamples } from "../example-codes";
 import fs from "fs";
+import path from "path";
 
-const sttOpenAIPythonCode = fs.readFileSync("../example-codes/stt-openai.py", "utf8");
-const sttOpenAIShCode = fs.readFileSync("../example-codes/stt-openai.sh", "utf8");
-const sttOpenAIJSCode = fs.readFileSync("../example-codes/stt-openai.js", "utf8");
+const sttOpenAIPythonCode = fs.readFileSync(path.join(process.cwd(), "example-codes/stt-openai.py"), "utf8");
+const sttOpenAIShCode = fs.readFileSync(path.join(process.cwd(), "example-codes/stt-openai.sh"), "utf8");
+const sttOpenAIJSCode = fs.readFileSync(path.join(process.cwd(), "example-codes/stt-openai.js"), "utf8");
 
 export default function OpenAICompatibilityPage() {
 
