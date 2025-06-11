@@ -50,7 +50,6 @@ export default function CodeExample({
       curl: 'cURL',
       python: 'Python',
       javascript: 'JavaScript',
-      typescript: 'TypeScript',
     };
     return names[lang as keyof typeof names] || lang;
   };

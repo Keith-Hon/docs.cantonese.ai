@@ -1,50 +1,27 @@
 import CodeExample from "@/app/components/CodeExample";
+// import { openaiExamples } from "../example-codes";
+import fs from "fs";
+
+const sttOpenAIPythonCode = fs.readFileSync("../example-codes/stt-openai.py", "utf8");
+const sttOpenAIShCode = fs.readFileSync("../example-codes/stt-openai.sh", "utf8");
+const sttOpenAIJSCode = fs.readFileSync("../example-codes/stt-openai.js", "utf8");
 
 export default function OpenAICompatibilityPage() {
+
     const openaiExamples = {
         curl: {
-            language: 'bash',
-            code: `curl -X POST "https://stt-api.cantonese.ai/v1/audio/transcriptions" \\
-  -H "Authorization: Bearer XXXXXXX" \\
-  -F "file=@audio.wav" \\
-  -F "language=zh"`
+          language: 'bash',
+          code: sttOpenAIShCode,
         },
         python: {
-            language: 'python',
-            code: `from openai import OpenAI
-
-client = OpenAI(base_url="https://stt-api.cantonese.ai/v1/", api_key="XXXXXXX")
-
-audio_file = open("audio.wav", "rb")
-transcript = client.audio.transcriptions.create(file=audio_file, model="", language="zh")
-print(transcript.text)`
+          language: 'python',
+          code: sttOpenAIPythonCode,
         },
         javascript: {
-            language: 'javascript',
-            code: `const OpenAI = require('openai');
-const fs = require('fs');
-
-if (!globalThis.File) {
-    globalThis.File = require('node:buffer').File;
-}
-
-async function main() {
-    const client = new OpenAI({
-        baseURL: 'https://stt-api.cantonese.ai/v1/',
-        apiKey: 'XXXXXXX'
-    });
-
-    const audioFile = fs.createReadStream('audio.wav');
-    const transcript = await client.audio.transcriptions.create({
-        file: audioFile,
-        language: 'zh'
-    });
-    console.log(transcript.text);
-}
-
-main().catch(console.error);`
+          language: 'javascript',
+          code: sttOpenAIJSCode,
         },
-    };
+      };
 
     return (
         <div className="prose prose-lg max-w-none">

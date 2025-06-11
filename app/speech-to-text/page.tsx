@@ -1,50 +1,25 @@
 import CodeExample from "@/app/components/CodeExample";
+// import { sttExamples } from "../example-codes";
+import fs from "fs";
+import path from "path";
+
+const sttPythonCode = fs.readFileSync(path.join(process.cwd(), "example-codes/speech-to-text.py"), "utf8");
+const sttShCode = fs.readFileSync(path.join(process.cwd(), "example-codes/speech-to-text.sh"), "utf8");
+const sttJSCode = fs.readFileSync(path.join(process.cwd(), "example-codes/speech-to-text.js"), "utf8");
 
 export default function SpeechToTextApiPage() {
     const sttExamples = {
         curl: {
             language: 'bash',
-            code: `curl -X POST "https://paid-api.cantonese.ai" \\
-      -F "api_key=YOUR_API_KEY" \\
-      -F "with_timestmap=false" \\
-      -F "with_diarization=false" \\
-      -F "data=@audio.wav;type=audio/wav"`
+            code: sttShCode,
         },
         python: {
             language: 'python',
-            code: `import requests
-    
-    url = "https://paid-api.cantonese.ai"
-    
-    payload = {
-        "api_key": "YOUR_API_KEY",
-        "with_timestmap": "false",
-        "with_diarization": "false"
-    }
-    files=[
-      ('data',('audio.wav',open('ABSOLUTE_FILE_PATH','rb'),'audio/wav'))
-    ]
-    headers = {}
-    
-    response = requests.request("POST", url, headers=headers, data=payload, files=files)
-    
-    print(response.text)`
+            code: sttPythonCode,
         },
         javascript: {
             language: 'javascript',
-            code: `const formData = new FormData();
-    formData.append('api_key', 'YOUR_API_KEY');
-    formData.append('with_timestmap', 'false');
-    formData.append('with_diarization', 'false');
-    formData.append('data', audioFile, 'audio.wav');
-    
-    const response = await fetch('https://paid-api.cantonese.ai', {
-      method: 'POST',
-      body: formData
-    });
-    
-    const data = await response.json();
-    console.log(data);`
+            code: sttJSCode,
         },
     };
     return (
@@ -197,138 +172,6 @@ export default function SpeechToTextApiPage() {
 }`}
                 </pre>
             </div>
-
-
-
-{/* 
-            <h2 id="error-responses">Error Responses</h2>
-            
-            <div className="bg-gray-900 rounded-lg p-4 not-prose">
-                <pre className="text-red-400 text-sm overflow-x-auto">
-{`{
-  "error": {
-    "code": "file_too_large",
-    "message": "Audio file exceeds maximum size of 25MB",
-    "type": "invalid_request_error",
-    "param": "data"
-  }
-}`}
-                </pre>
-            </div>
-
-            h2 id="common-errors">Common Error Codes</h2>
-            
-            <div className="overflow-x-auto not-prose">
-                <table className="min-w-full border border-gray-200">
-                    <thead className="bg-gray-50">
-                        <tr>
-                            <th className="px-4 py-2 text-left text-sm font-medium text-gray-900 border-b border-gray-200">
-                                Error Code
-                            </th>
-                            <th className="px-4 py-2 text-left text-sm font-medium text-gray-900 border-b border-gray-200">
-                                Description
-                            </th>
-                        </tr>
-                    </thead>
-                    <tbody className="bg-white">
-                        <tr>
-                            <td className="px-4 py-2 text-sm font-mono text-gray-900 border-b border-gray-200">
-                                api_key_required
-                            </td>
-                            <td className="px-4 py-2 text-sm text-gray-600 border-b border-gray-200">
-                                The api_key parameter is required
-                            </td>
-                        </tr>
-                        <tr>
-                            <td className="px-4 py-2 text-sm font-mono text-gray-900 border-b border-gray-200">
-                                file_required
-                            </td>
-                            <td className="px-4 py-2 text-sm text-gray-600 border-b border-gray-200">
-                                No audio file was provided
-                            </td>
-                        </tr>
-                        <tr>
-                            <td className="px-4 py-2 text-sm font-mono text-gray-900 border-b border-gray-200">
-                                file_too_large
-                            </td>
-                            <td className="px-4 py-2 text-sm text-gray-600 border-b border-gray-200">
-                                Audio file exceeds maximum size of 25MB
-                            </td>
-                        </tr>
-                        <tr>
-                            <td className="px-4 py-2 text-sm font-mono text-gray-900 border-b border-gray-200">
-                                duration_too_long
-                            </td>
-                            <td className="px-4 py-2 text-sm text-gray-600 border-b border-gray-200">
-                                Audio duration exceeds maximum of 30 minutes
-                            </td>
-                        </tr>
-                        <tr>
-                            <td className="px-4 py-2 text-sm font-mono text-gray-900 border-b border-gray-200">
-                                unsupported_format
-                            </td>
-                            <td className="px-4 py-2 text-sm text-gray-600 border-b border-gray-200">
-                                The audio format is not supported
-                            </td>
-                        </tr>
-                        <tr>
-                            <td className="px-4 py-2 text-sm font-mono text-gray-900 border-b border-gray-200">
-                                audio_corrupted
-                            </td>
-                            <td className="px-4 py-2 text-sm text-gray-600 border-b border-gray-200">
-                                The audio file is corrupted or unreadable
-                            </td>
-                        </tr>
-                        <tr>
-                            <td className="px-4 py-2 text-sm font-mono text-gray-900 border-b border-gray-200">
-                                no_speech_detected
-                            </td>
-                            <td className="px-4 py-2 text-sm text-gray-600 border-b border-gray-200">
-                                No speech was detected in the audio file
-                            </td>
-                        </tr>
-                        <tr>
-                            <td className="px-4 py-2 text-sm font-mono text-gray-900 border-b border-gray-200">
-                                rate_limit_exceeded
-                            </td>
-                            <td className="px-4 py-2 text-sm text-gray-600 border-b border-gray-200">
-                                Too many requests, please slow down
-                            </td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
-
-            <h2 id="rate-limits">Rate Limits</h2>
-            
-            <p>
-                The Speech-to-Text endpoint has the following rate limits:
-            </p>
-            
-            <ul>
-                <li><strong>Free tier:</strong> 50 requests per hour, 5 hours of audio per day</li>
-                <li><strong>Pro tier:</strong> 500 requests per hour, 50 hours of audio per day</li>
-                <li><strong>Enterprise tier:</strong> Custom limits based on your plan</li>
-            </ul>
-            
-            <p>
-                For higher limits, please{" "}
-                <a href="mailto:admin@cantonese.ai" className="text-blue-600 hover:text-blue-800">
-                    contact us
-                </a>
-                .
-            </p>
-
-            <h2 id="best-practices">Best Practices</h2>
-            
-            <ul>
-                <li><strong>Audio Quality:</strong> Use high-quality audio (16kHz+ sample rate) for better transcription accuracy</li>
-                <li><strong>Background Noise:</strong> Minimize background noise and echo for optimal results</li>
-                <li><strong>File Size:</strong> For large files, consider splitting them into smaller chunks to reduce processing time</li>
-                <li><strong>Language Detection:</strong> Specify the language parameter when you know the source language for better accuracy</li>
-                <li><strong>Timestamps:</strong> Enable timestamps for applications that need time-synchronized transcriptions</li>
-                <li><strong>Speaker Diarization:</strong> Use speaker diarization for multi-speaker conversations to identify who said what</li>
-            </ul> */}
         </div>
     )
 }
