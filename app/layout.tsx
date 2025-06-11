@@ -46,7 +46,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
-        <title>cantonese.ai API Documentation</title>
+        <title>API Documentation | cantonese.ai</title>
         <meta name="description" content="Official API documentation for cantonese.ai - AI technologies for the Cantonese language" />
         <meta name="keywords" content="Cantonese, AI, API, Speech-to-Text, Text-to-Speech, Translation, Voice Cloning" />
         <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
