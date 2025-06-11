@@ -24,6 +24,10 @@ print(transcript.text)`
             code: `const OpenAI = require('openai');
 const fs = require('fs');
 
+if (!globalThis.File) {
+    globalThis.File = require('node:buffer').File;
+}
+
 const client = new OpenAI({
     baseURL: 'https://stt-api.cantonese.ai/v1/',
     apiKey: 'XXXXXXX'
