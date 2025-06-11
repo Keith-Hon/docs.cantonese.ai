@@ -4,20 +4,19 @@ export default function OpenAICompatibilityPage() {
     const openaiExamples = {
         curl: {
             language: 'bash',
-            code: `curl -X POST "https://stt.cantonese.ai/v1/audio/transcriptions" \\
+            code: `curl -X POST "https://stt-api.cantonese.ai/v1/audio/transcriptions" \\
   -H "Authorization: Bearer XXXXXXX" \\
   -F "file=@audio.wav" \\
-  -F "model=whisper-1" \\
   -F "language=zh"`
         },
         python: {
             language: 'python',
             code: `from openai import OpenAI
 
-client = OpenAI(base_url="https://stt.cantonese.ai/v1/", api_key="XXXXXXX")
+client = OpenAI(base_url="https://stt-api.cantonese.ai/v1/", api_key="XXXXXXX")
 
 audio_file = open("audio.wav", "rb")
-transcript = client.audio.transcriptions.create(file=audio_file, language="zh")
+transcript = client.audio.transcriptions.create(file=audio_file, model="", language="zh")
 print(transcript.text)`
         },
         javascript: {
@@ -26,7 +25,7 @@ print(transcript.text)`
 import fs from 'fs';
 
 const client = new OpenAI({
-    baseURL: 'https://stt.cantonese.ai/v1/',
+    baseURL: 'https://stt-api.cantonese.ai/v1/',
     apiKey: 'XXXXXXX'
 });
 
@@ -43,7 +42,7 @@ console.log(transcript.text);`
 import fs from 'fs';
 
 const client: OpenAI = new OpenAI({
-    baseURL: 'https://stt.cantonese.ai/v1/',
+    baseURL: 'https://stt-api.cantonese.ai/v1/',
     apiKey: 'XXXXXXX'
 });
 
@@ -66,26 +65,15 @@ console.log(transcript.text);`
             </p>
 
             <p>
-                Cantonese.AI's API endpoints for speech-to-text are compatible with OpenAI's API format.
-            </p>
-            
-            <p>
-                If you have an application that uses OpenAI's client libraries, you can easily configure it to point to 
-                Cantonese.AI's API servers, and start using our specialized Cantonese language processing capabilities.
-            </p>
-
-            <h2 id="configuring-openai">Configuring OpenAI to use Cantonese.AI</h2>
-            
-            <p>
                 To start using Cantonese.AI with OpenAI's client libraries, pass in your Cantonese.AI API key to the{' '}
                 <code className="text-sm bg-gray-100 px-1 py-0.5 rounded">api_key</code> option, and 
                 change the <code className="text-sm bg-gray-100 px-1 py-0.5 rounded">base_url</code> to{' '}
-                <code className="text-sm bg-gray-100 px-1 py-0.5 rounded">https://stt.cantonese.ai/v1/</code> for Speech-to-Text:
+                <code className="text-sm bg-gray-100 px-1 py-0.5 rounded">https://stt-api.cantonese.ai/v1/</code> for Speech-to-Text.
             </p>
 
             <section className="mb-16">
                 <CodeExample
-                    title="Speech-to-Text Example"
+                    title="Example"
                     description="Convert audio files to text using OpenAI-compatible client libraries with Cantonese.AI."
                     examples={openaiExamples}
                 />
