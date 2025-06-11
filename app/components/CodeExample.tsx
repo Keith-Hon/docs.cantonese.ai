@@ -20,7 +20,7 @@ export default function CodeExample({
   description,
   examples
 }: CodeExampleProps) {
-  const [activeTab, setActiveTab] = useState('curl');
+  const [activeTab, setActiveTab] = useState(() => Object.keys(examples)[0] || 'curl');
   const [copied, setCopied] = useState(false);
   const codeRef = useRef<HTMLElement>(null);
 
@@ -50,6 +50,7 @@ export default function CodeExample({
       curl: 'cURL',
       python: 'Python',
       javascript: 'JavaScript',
+      typescript: 'TypeScript',
     };
     return names[lang as keyof typeof names] || lang;
   };

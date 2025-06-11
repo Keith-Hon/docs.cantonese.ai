@@ -1,4 +1,4 @@
-import CodeExample from "@/app/examples/codeExample";
+import CodeExample from "@/app/components/CodeExample";
 
 export default function SpeechToTextApiPage() {
     const sttExamples = {

@@ -23,9 +23,16 @@ const navigation = [
     title: "Endpoints",
     items: [
       { name: "Speech-to-Text", href: "/speech-to-text" },
+      { name: "Speech-to-Text (OpenAI)", href: "/sst-openai" },
       { name: "Text-to-Speech", href: "/text-to-speech" },
     ],
   },
+  // {
+  //   title: "Integration",
+  //   items: [
+  //     { name: "OpenAI Compatibility", href: "/sst-openai" },
+  //   ],
+  // },
 ];
 
 export default function RootLayout({
