@@ -21,8 +21,8 @@ print(transcript.text)`
         },
         javascript: {
             language: 'javascript',
-            code: `import OpenAI from 'openai';
-import fs from 'fs';
+            code: `const OpenAI = require('openai');
+const fs = require('fs');
 
 const client = new OpenAI({
     baseURL: 'https://stt-api.cantonese.ai/v1/',
@@ -31,23 +31,6 @@ const client = new OpenAI({
 
 const audioFile = fs.createReadStream('audio.wav');
 const transcript = await client.audio.transcriptions.create({
-    file: audioFile,
-    language: 'zh'
-});
-console.log(transcript.text);`
-        },
-        typescript: {
-            language: 'typescript',
-            code: `import OpenAI from 'openai';
-import fs from 'fs';
-
-const client: OpenAI = new OpenAI({
-    baseURL: 'https://stt-api.cantonese.ai/v1/',
-    apiKey: 'XXXXXXX'
-});
-
-const audioFile: fs.ReadStream = fs.createReadStream('audio.wav');
-const transcript: OpenAI.Audio.Transcription = await client.audio.transcriptions.create({
     file: audioFile,
     language: 'zh'
 });
