@@ -1,0 +1,49 @@
+{
+  "standard": {
+    "text": "你好 我係 Alice。你好 我係 Bob。",
+    "is_cached": true,
+    "duration": 14.912,
+    "process_time": 0.3366544246673584
+  },
+  "with_timestamps": {
+    "text": "你好 我係 Alice。你好 我係 Bob。",
+    "is_cached": true,
+    "duration": 14.912,
+    "process_time": 0.4,
+    "timestamp": "00:00:00,000 --> 00:00:05,000"
+  },
+  "with_diarization": {
+    "text": "你好 我係 Alice。你好 我係 Bob。",
+    "is_cached": true,
+    "duration": 14.912,
+    "process_time": 0.5,
+    "diarization": [
+      { "speaker": "SPEAKER_00", "text": "你好 我係 Alice。", "start": 0.1, "end": 1.6 },
+      { "speaker": "SPEAKER_01", "text": "你好 我係 Bob。", "start": 2.0, "end": 3.5 }
+    ]
+  },
+  "with_timestamps_and_diarization": {
+    "text": "你好 我係 Alice。你好 我係 Bob。",
+    "is_cached": true,
+    "duration": 14.912,
+    "process_time": 0.6,
+    "diarization": [
+      {
+        "speaker": "SPEAKER_00",
+        "text": "你好 我係 Alice。",
+        "timestamp": "00:00:00,000 --> 00:00:05,000"
+      },
+      {
+        "speaker": "SPEAKER_01",
+        "text": "你好 我係 Bob。",
+        "timestamp": "00:00:00,000 --> 00:00:05,000"
+      }
+    ]
+  },
+  "text_to_speech": {
+    "file": "UklGRiQAAABXQVZFZm10IBAAAAABAAEARKwAAIhYAQACABAAZGF0YQAAAAA=",
+    "request_id": "a1b2c3d4-e5f6-7890-1234-567890abcdef",
+    "srt_timestamp": "1\\n00:00:00,100 --> 00:00:00,500\\n你好\\n\\n2\\n00:00:00,500 --> 00:00:00,900\\n我係\\n\\n3\\n00:00:01,000 --> 00:00:01,500\\nAlice",
+    "timestamps": "00:00:00,000 --> 00:00:05,000"
+  }
+}

@@ -1,11 +1,14 @@
 import CodeExample from "@/app/components/CodeExample";
-// import { sttExamples } from "../example-codes";
+import JsonExample from "@/app/components/JsonExample";
 import fs from "fs";
 import path from "path";
 
 const sttPythonCode = fs.readFileSync(path.join(process.cwd(), "example-codes/speech-to-text.py"), "utf8");
 const sttShCode = fs.readFileSync(path.join(process.cwd(), "example-codes/speech-to-text.sh"), "utf8");
 const sttJSCode = fs.readFileSync(path.join(process.cwd(), "example-codes/speech-to-text.js"), "utf8");
+
+const responseExamplesRaw = fs.readFileSync(path.join(process.cwd(), "example-codes/response-example.json"), "utf8");
+const responseExamples = JSON.parse(responseExamplesRaw);
 
 export default function SpeechToTextApiPage() {
     const sttExamples = {
@@ -27,7 +30,7 @@ export default function SpeechToTextApiPage() {
             <h1>Speech-to-Text</h1>
 
             <p>
-                Convert Cantonese audio files to accurate text transcriptions. This endpoint supports multiple 
+                Convert Cantonese audio files to accurate text transcriptions. This endpoint supports multiple
                 audio formats, timestamps, speaker diarization, and advanced transcription options.
             </p>
 
@@ -41,9 +44,9 @@ export default function SpeechToTextApiPage() {
             </div> */}
 
             <h2 id="request-parameters">Request Parameters</h2>
-            
+
             <p>This endpoint requires multipart/form-data for file uploads.</p>
-            
+
             <div className="overflow-x-auto not-prose">
                 <table className="min-w-full border border-gray-200">
                     <thead className="bg-gray-50">
@@ -119,6 +122,7 @@ export default function SpeechToTextApiPage() {
                                 Enable speaker diarization to identify different speakers. Defaults to false.
                             </td>
                         </tr>
+                        
                     </tbody>
                 </table>
             </div>
@@ -157,21 +161,34 @@ export default function SpeechToTextApiPage() {
             </section>
 
             <h2 id="response">Response</h2>
-            
+
             <p>
                 On success, the response returns a JSON object with the transcription results:
             </p>
-            
-            <div className="bg-gray-900 rounded-lg p-4 not-prose">
-                <pre className="text-green-400 text-sm overflow-x-auto">
-{`{
-  "text":"你好 我係 Alice。你好 我係 Bob。",
-  "is_cached":true,
-  "duration":14.912,
-  "process_time":0.3366544246673584
-}`}
-                </pre>
-            </div>
+
+            <JsonExample
+                title="Standard Response"
+                description={<>Default response format.</>}
+                code={JSON.stringify(responseExamples.standard, null, 2)}
+            />
+
+            <JsonExample
+                title="With Timestamps"
+                description={<><code>with_timestamp = true</code></>}
+                code={JSON.stringify(responseExamples.with_timestamps, null, 2)}
+            />
+
+            <JsonExample
+                title="With Diarization"
+                description={<><code>with_diarization = true</code></>}
+                code={JSON.stringify(responseExamples.with_diarization, null, 2)}
+            />
+
+            <JsonExample
+                title="With Timestamps and Diarization"
+                description={<><code>with_timestamp = true</code> and <code>with_diarization = true</code></>}
+                code={JSON.stringify(responseExamples.with_timestamps_and_diarization, null, 2)}
+            />
         </div>
     )
 }

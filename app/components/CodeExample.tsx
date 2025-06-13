@@ -57,23 +57,23 @@ export default function CodeExample({
   const currentExample = examples[activeTab as keyof typeof examples];
 
   return (
-    <div>
-      <h2 className="text-2xl font-bold text-gray-900 mb-4">
+    <div className="w-full">
+      <h2 className="text-xl sm:text-2xl font-bold text-gray-900 mb-3 sm:mb-4">
         {title}
       </h2>
-      <p className="text-gray-600 mb-6">
+      <p className="text-sm sm:text-base text-gray-600 mb-4 sm:mb-6 leading-relaxed">
         {description}
       </p>
       
       {/* Code Example with Tabs */}
-      <div className="bg-gray-800 rounded-lg overflow-hidden">
+      <div className="bg-gray-800 rounded-lg overflow-hidden w-full">
         {/* Language Tabs */}
-        <div className="flex bg-gray-900 border-b border-gray-700">
+        <div className="flex bg-gray-900 border-b border-gray-700 overflow-x-auto">
           {Object.keys(examples).map((lang) => (
             <button
               key={lang}
               onClick={() => setActiveTab(lang)}
-              className={`px-6 py-3 text-sm font-medium transition-colors border-b-2 ${
+              className={`px-3 sm:px-6 py-2 sm:py-3 text-xs sm:text-sm font-medium transition-colors border-b-2 whitespace-nowrap flex-shrink-0 ${
                 activeTab === lang
                   ? 'text-white border-blue-400'
                   : 'text-gray-400 border-transparent hover:text-gray-300'
@@ -88,11 +88,11 @@ export default function CodeExample({
         <div className="relative">
           <button
             onClick={copyToClipboard}
-            className="absolute top-4 right-4 p-2 bg-gray-700 hover:bg-gray-600 rounded-md transition-colors group z-10"
+            className="absolute top-2 sm:top-4 right-2 sm:right-4 p-1.5 sm:p-2 bg-gray-700 hover:bg-gray-600 rounded-md transition-colors group z-10"
             title="Copy code"
           >
             <svg 
-              className="w-4 h-4 text-gray-300 group-hover:text-white" 
+              className="w-3 h-3 sm:w-4 sm:h-4 text-gray-300 group-hover:text-white" 
               fill="none" 
               stroke="currentColor" 
               viewBox="0 0 24 24"
@@ -105,7 +105,7 @@ export default function CodeExample({
             </svg>
           </button>
           
-          <pre className="p-4 pr-16 text-sm overflow-x-auto bg-gray-800">
+          <pre className="p-3 sm:p-4 pr-10 sm:pr-16 text-xs sm:text-sm overflow-x-auto bg-gray-800">
             <code 
               ref={codeRef}
               className={`language-${currentExample.language}`}

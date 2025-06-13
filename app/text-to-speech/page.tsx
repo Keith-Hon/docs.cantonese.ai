@@ -3,10 +3,15 @@ import CodeExample from "@/app/components/CodeExample";
 
 import fs from "fs";
 import path from "path";
+import JsonExample from "@/app/components/JsonExample";
 
 const ttsPythonCode = fs.readFileSync(path.join(process.cwd(), "example-codes/text-to-speech.py"), "utf8");
 const ttsShCode = fs.readFileSync(path.join(process.cwd(), "example-codes/text-to-speech.sh"), "utf8");
 const ttsJSCode = fs.readFileSync(path.join(process.cwd(), "example-codes/text-to-speech.js"), "utf8");
+
+const responseExamplesRaw = fs.readFileSync(path.join(process.cwd(), "example-codes/response-example.json"), "utf8");
+const responseExamples = JSON.parse(responseExamplesRaw);
+
 
 export default function TextToSpeechApiPage() {
 
@@ -28,7 +33,7 @@ export default function TextToSpeechApiPage() {
 
   return (
     <div className="prose prose-lg max-w-none">
-      <h1>Text-to-Speech</h1>
+      <h1 className="text-xl sm:text-2xl lg:text-3xl">Text-to-Speech</h1>
 
       <p>
         Convert text to natural-sounding Cantonese speech. This endpoint supports multiple
@@ -228,7 +233,7 @@ export default function TextToSpeechApiPage() {
       <section className="mb-16">
         <CodeExample
           title="Example Request"
-          description="Here are examples of how to transcribe audio files using different programming languages."
+          description="Here are examples of how to generate audio from text using different programming languages."
           examples={ttsExamples}
         />
       </section>
@@ -236,14 +241,39 @@ export default function TextToSpeechApiPage() {
       <h2 id="response">Response</h2>
 
       <p>
-        On success, the response body contains the audio file in the requested format.
-        The response headers include:
+        The API can return either the audio file directly or a JSON object.
+        By default, the audio file is returned. If <code>is_from_frontend: true</code> is
+        sent in the request, a JSON object is returned instead, which is useful for web clients.
       </p>
 
-      <ul>
-        <li><code>Content-Type</code>: The MIME type of the audio file</li>
-        <li><code>Content-Length</code>: Size of the audio file in bytes</li>
-      </ul>
+
+      <div className="my-6 not-prose p-4 rounded-lg border bg-gray-50">
+          <h3 className="text-base font-semibold">Direct Audio File Response</h3>
+          <p className="text-sm text-gray-600 mt-1">
+              The API returns the synthesized audio file directly. The response headers will include:
+          </p>
+          <ul className="text-sm list-disc pl-5 mt-2 space-y-1">
+              <li><code>Content-Type</code>: The MIME type of the audio file (e.g., <code>audio/mpeg</code>).</li>
+              <li><code>Content-Length</code>: The size of the audio file in bytes.</li>
+          </ul>
+      </div>
+
+      <JsonExample
+        title="JSON Response"
+        description={
+          <>
+            <p className="text-sm">The JSON object contains the base64-encoded audio file and detailed metadata.</p>
+            <p className="text-sm mt-2"><b>JSON Response Fields:</b></p>
+            <ul className="text-sm list-disc pl-5 mt-1 space-y-1">
+              <li><code>file</code>: A base64 encoded string of the audio file.</li>
+              <li><code>request_id</code>: A unique identifier for the request.</li>
+              <li><code>srt_timestamp</code>: A string containing timestamps in SubRip (SRT) format.</li>
+              <li><code>timestamps</code>: An array of word-level timestamp objects, each with start/end times.</li>
+            </ul>
+          </>
+        }
+        code={JSON.stringify(responseExamples.text_to_speech, null, 2)}
+      />
     </div>
   );
 } 

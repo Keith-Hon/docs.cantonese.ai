@@ -25,22 +25,23 @@ export default function OpenAICompatibilityPage() {
       };
 
     return (
-        <div className="prose prose-lg max-w-none">
-            <h1>OpenAI Compatibility</h1>
+        <div className="prose prose-sm sm:prose-base lg:prose-lg max-w-none">
+            
+            <h1 className="text-xl sm:text-3xl lg:text-4xl font-bold text-gray-900 mb-4 sm:mb-6">OpenAI Compatible</h1>
 
-            <p>
+            <p className="text-base sm:text-lg text-gray-700 mb-4 sm:mb-6 leading-relaxed">
                 Cantonese.AI's API is compatible with OpenAI's libraries, making it easy to integrate our specialized 
                 Cantonese language models into your existing applications.
             </p>
 
-            <p>
+            <p className="text-base sm:text-lg text-gray-700 mb-6 sm:mb-8 leading-relaxed">
                 To start using Cantonese.AI with OpenAI's client libraries, pass in your Cantonese.AI API key to the{' '}
-                <code className="text-sm bg-gray-100 px-1 py-0.5 rounded">api_key</code> option, and 
-                change the <code className="text-sm bg-gray-100 px-1 py-0.5 rounded">base_url</code> to{' '}
-                <code className="text-sm bg-gray-100 px-1 py-0.5 rounded">https://stt-api.cantonese.ai/v1/</code> for Speech-to-Text.
+                <code className="text-xs sm:text-sm bg-gray-100 px-1 sm:px-2 py-0.5 sm:py-1 rounded font-mono break-words">api_key</code> option, and 
+                change the <code className="text-xs sm:text-sm bg-gray-100 px-1 sm:px-2 py-0.5 sm:py-1 rounded font-mono break-words">base_url</code> to{' '}
+                <code className="text-xs sm:text-sm bg-gray-100 px-1 sm:px-2 py-0.5 sm:py-1 rounded font-mono break-words">https://stt-api.cantonese.ai/v1/</code> for Speech-to-Text.
             </p>
 
-            <section className="mb-16">
+            <section className="mb-8 sm:mb-12 lg:mb-16">
                 <CodeExample
                     title="Example"
                     description="Convert audio files to text using OpenAI-compatible client libraries with Cantonese.AI."
