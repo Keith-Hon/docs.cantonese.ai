@@ -292,7 +292,7 @@ export default function TextToSpeechApiPage() {
         />
       </section>
 
-      <p><b>Output Format:</b> The response includes the generated audio and detailed timing data:</p>
+      <p><b>Output Format:</b> The response is a JSON object containing the base64-encoded audio file and detailed timing data:</p>
 
       <ul className="text-sm list-disc pl-5 mt-2 space-y-1">
         <li><code>file</code>: Base64-encoded audio file in the requested format</li>
