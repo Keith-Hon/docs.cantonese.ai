@@ -8,10 +8,8 @@ curl -X POST "https://cantonese.ai/api/tts" \
     "duration": 2,
     "pitch": 0,
     "language": "cantonese",
-    "output_extension": "wav",
     "voice_id": "2725cf0f-efe2-4132-9e06-62ad84b2973d",
     "should_enhance": false,
     "should_convert_from_simplified_to_traditional": true,
-    "should_return_timestamp": false
-  }' \
-  --output output.wav
+    "should_return_timestamp": true
+  }'

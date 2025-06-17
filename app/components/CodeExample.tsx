@@ -5,8 +5,8 @@ import hljs from 'highlight.js';
 import 'highlight.js/styles/atom-one-dark.css';
 
 interface CodeExampleProps {
-  title: string;
-  description: string;
+  // title: string;
+  // description: string;
   examples: {
     [key: string]: {
       language: string;
@@ -16,8 +16,8 @@ interface CodeExampleProps {
 }
 
 export default function CodeExample({ 
-  title,
-  description,
+  // title,
+  // description,
   examples
 }: CodeExampleProps) {
   const [activeTab, setActiveTab] = useState(() => Object.keys(examples)[0] || 'curl');
@@ -58,12 +58,12 @@ export default function CodeExample({
 
   return (
     <div className="w-full">
-      <h2 className="text-xl sm:text-2xl font-bold text-gray-900 mb-3 sm:mb-4">
+      {/* <h2 className="text-xl sm:text-2xl font-bold text-gray-900 mb-3 sm:mb-4">
         {title}
       </h2>
       <p className="text-sm sm:text-base text-gray-600 mb-4 sm:mb-6 leading-relaxed">
         {description}
-      </p>
+      </p> */}
       
       {/* Code Example with Tabs */}
       <div className="bg-gray-800 rounded-lg overflow-hidden w-full">

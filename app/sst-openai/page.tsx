@@ -41,10 +41,16 @@ export default function OpenAICompatibilityPage() {
                 <code className="text-xs sm:text-sm bg-gray-100 px-1 sm:px-2 py-0.5 sm:py-1 rounded font-mono break-words">https://stt-api.cantonese.ai/v1/</code> for Speech-to-Text.
             </p>
 
+            <h2 id="example-request">Example Request</h2>
+
+            <p>
+                Here are examples of how to transcribe audio files using different programming languages.
+            </p>
+
             <section className="mb-8 sm:mb-12 lg:mb-16">
                 <CodeExample
-                    title="Example"
-                    description="Convert audio files to text using OpenAI-compatible client libraries with Cantonese.AI."
+                    // title="Example"
+                    // description="Convert audio files to text using OpenAI-compatible client libraries with Cantonese.AI."
                     examples={openaiExamples}
                 />
             </section>

@@ -1,6 +1,6 @@
 const formData = new FormData();
 formData.append('api_key', 'YOUR_API_KEY');
-formData.append('with_timestmap', 'false');
+formData.append('with_timestamp', 'false');
 formData.append('with_diarization', 'false');
 formData.append('data', audioFile, 'audio.wav');
 

@@ -5,12 +5,12 @@ import hljs from 'highlight.js';
 import 'highlight.js/styles/atom-one-dark.css';
 
 interface JsonExampleProps {
-  title: string;
-  description: React.ReactNode;
+  // title: string;
+  // description: React.ReactNode;
   code: string;
 }
 
-export default function JsonExample({ title, description, code }: JsonExampleProps) {
+export default function JsonExample({ code }: JsonExampleProps) {
   const [copied, setCopied] = useState(false);
   const codeRef = useRef<HTMLElement>(null);
 
@@ -36,8 +36,8 @@ export default function JsonExample({ title, description, code }: JsonExamplePro
 
   return (
     <div className="w-full mb-8">
-      <h3 id={title.toLowerCase().replace(/ /g, "-")}>{title}</h3>
-      <div>{description}</div>
+      {/* <h3 id={title.toLowerCase().replace(/ /g, "-")}>{title}</h3>
+      <div>{description}</div> */}
       
       <div className="bg-gray-900 rounded-lg overflow-hidden w-full relative not-prose">
           <button

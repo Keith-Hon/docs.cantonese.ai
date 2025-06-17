@@ -4,7 +4,7 @@ url = "https://paid-api.cantonese.ai"
 
 payload = {
     "api_key": "YOUR_API_KEY",
-    "with_timestmap": "false",
+    "with_timestamp": "false",
     "with_diarization": "false"
 }
 files=[

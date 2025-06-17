@@ -96,7 +96,7 @@ export default function SpeechToTextApiPage() {
                         </tr>
                         <tr>
                             <td className="px-4 py-2 text-sm font-mono text-gray-900 border-b border-gray-200">
-                                with_timestmap
+                                with_timestamp
                             </td>
                             <td className="px-4 py-2 text-sm text-gray-600 border-b border-gray-200">
                                 boolean
@@ -152,10 +152,16 @@ export default function SpeechToTextApiPage() {
                 </div>
             </div> */}
 
+            <h2 id="example-request">Example Request</h2>
+
+            <p>
+                Here are examples of how to transcribe audio files using different programming languages.
+            </p>
+
             <section className="mb-16">
                 <CodeExample
-                    title="Example Request"
-                    description="Here are examples of how to transcribe audio files using different programming languages."
+                    // title="Example Request"
+                    // description="Here are examples of how to transcribe audio files using different programming languages."
                     examples={sttExamples}
                 />
             </section>
@@ -166,27 +172,35 @@ export default function SpeechToTextApiPage() {
                 On success, the response returns a JSON object with the transcription results:
             </p>
 
+            <p>Default response format:</p>
+
             <JsonExample
-                title="Standard Response"
-                description={<>Default response format.</>}
+                // title="Standard Response"
+                // description={<>Default response format.</>}
                 code={JSON.stringify(responseExamples.standard, null, 2)}
             />
 
+            <p><code>with_timestamp = true</code></p>
+
             <JsonExample
-                title="With Timestamps"
-                description={<><code>with_timestamp = true</code></>}
+                // title="With Timestamps"
+                // description={<><code>with_timestamp = true</code></>}
                 code={JSON.stringify(responseExamples.with_timestamps, null, 2)}
             />
 
+            <p><code>with_diarization = true</code></p>
+
             <JsonExample
-                title="With Diarization"
-                description={<><code>with_diarization = true</code></>}
+                // title="With Diarization"
+                // description={<><code>with_diarization = true</code></>}
                 code={JSON.stringify(responseExamples.with_diarization, null, 2)}
             />
 
+            <p><code>with_timestamp = true</code> and <code>with_diarization = true</code></p>
+
             <JsonExample
-                title="With Timestamps and Diarization"
-                description={<><code>with_timestamp = true</code> and <code>with_diarization = true</code></>}
+                // title="With Timestamps and Diarization"
+                // description={<><code>with_timestamp = true</code> and <code>with_diarization = true</code></>}
                 code={JSON.stringify(responseExamples.with_timestamps_and_diarization, null, 2)}
             />
         </div>

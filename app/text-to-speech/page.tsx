@@ -5,9 +5,13 @@ import fs from "fs";
 import path from "path";
 import JsonExample from "@/app/components/JsonExample";
 
-const ttsPythonCode = fs.readFileSync(path.join(process.cwd(), "example-codes/text-to-speech.py"), "utf8");
+const ttsPyCode = fs.readFileSync(path.join(process.cwd(), "example-codes/text-to-speech.py"), "utf8");
 const ttsShCode = fs.readFileSync(path.join(process.cwd(), "example-codes/text-to-speech.sh"), "utf8");
 const ttsJSCode = fs.readFileSync(path.join(process.cwd(), "example-codes/text-to-speech.js"), "utf8");
+
+const ttsPyCodeWithTimestamp = fs.readFileSync(path.join(process.cwd(), "example-codes/tts-with-timestamp.py"), "utf8");
+const ttsShCodeWithTimestamp = fs.readFileSync(path.join(process.cwd(), "example-codes/tts-with-timestamp.sh"), "utf8");
+const ttsJSCodeWithTimestamp = fs.readFileSync(path.join(process.cwd(), "example-codes/tts-with-timestamp.js"), "utf8");
 
 const responseExamplesRaw = fs.readFileSync(path.join(process.cwd(), "example-codes/response-example.json"), "utf8");
 const responseExamples = JSON.parse(responseExamplesRaw);
@@ -23,11 +27,26 @@ export default function TextToSpeechApiPage() {
     },
     python: {
       language: 'python',
-      code: ttsPythonCode,
+      code: ttsPyCode,
     },
     javascript: {
       language: 'javascript',
       code: ttsJSCode,
+    },
+  };
+
+  const ttsExamplesWithTimestamp = {
+    curl: {
+      language: 'bash',
+      code: ttsShCodeWithTimestamp,
+    },
+    python: {
+      language: 'python',
+      code: ttsPyCodeWithTimestamp,
+    },
+    javascript: {
+      language: 'javascript',
+      code: ttsJSCodeWithTimestamp,
     },
   };
 
@@ -224,54 +243,77 @@ export default function TextToSpeechApiPage() {
                 Whether to convert simplified Chinese to traditional Chinese before synthesis. Defaults to false.
               </td>
             </tr>
+            <tr>
+              <td className="px-4 py-2 text-sm font-mono text-gray-900 border-b border-gray-200">
+                should_return_timestamp
+              </td>
+              <td className="px-4 py-2 text-sm text-gray-600 border-b border-gray-200">
+                boolean
+              </td>
+              <td className="px-4 py-2 text-sm text-gray-600 border-b border-gray-200">
+                No
+              </td>
+              <td className="px-4 py-2 text-sm text-gray-600 border-b border-gray-200">
+                Defaults to false.
+              </td>
+            </tr>
           </tbody>
         </table>
       </div>
 
 
+      <h2 id="example-request">Example Request</h2>
+
+      <p>When <code>should_return_timestamp = false</code>, the API returns an audio file as output.</p>
+
 
       <section className="mb-16">
         <CodeExample
-          title="Example Request"
-          description="Here are examples of how to generate audio from text using different programming languages."
+          // title="Example Request"
+          // description="Here are examples of how to generate audio from text using different programming languages."
           examples={ttsExamples}
         />
       </section>
 
-      <h2 id="response">Response</h2>
+      <p><b>Output:</b> An audio file (.mp3, .wav, .ogg, .flac) </p>
+
+
+      <h2 id="json-response-example">Generate a JSON response with timestamp</h2>
 
       <p>
-        The API can return either the audio file directly or a JSON object.
-        By default, the audio file is returned. If <code>is_from_frontend: true</code> is
-        sent in the request, a JSON object is returned instead, which is useful for web clients.
+        When <code>should_return_timestamp = true</code>, the API returns a JSON response containing the base64-encoded audio file and timing information.
       </p>
 
+      <section className="mb-16">
+        <CodeExample
+          // title="Example Request"
+          // description="Here are examples of how to generate audio from text using different programming languages."
+          examples={ttsExamplesWithTimestamp}
+        />
+      </section>
 
-      <div className="my-6 not-prose p-4 rounded-lg border bg-gray-50">
-          <h3 className="text-base font-semibold">Direct Audio File Response</h3>
-          <p className="text-sm text-gray-600 mt-1">
-              The API returns the synthesized audio file directly. The response headers will include:
-          </p>
-          <ul className="text-sm list-disc pl-5 mt-2 space-y-1">
-              <li><code>Content-Type</code>: The MIME type of the audio file (e.g., <code>audio/mpeg</code>).</li>
-              <li><code>Content-Length</code>: The size of the audio file in bytes.</li>
-          </ul>
-      </div>
+      <p><b>Output Format:</b> The response includes the generated audio and detailed timing data:</p>
+
+      <ul className="text-sm list-disc pl-5 mt-2 space-y-1">
+        <li><code>file</code>: Base64-encoded audio file in the requested format</li>
+        <li><code>request_id</code>: Unique identifier for this request</li>
+        <li><code>srt_timestamp</code>: Subtitle timestamps in SRT format</li>
+        <li><code>timestamps</code>: Array of word-level timing data with start/end times and text</li>
+      </ul>
 
       <JsonExample
-        title="JSON Response"
-        description={
-          <>
-            <p className="text-sm">The JSON object contains the base64-encoded audio file and detailed metadata.</p>
-            <p className="text-sm mt-2"><b>JSON Response Fields:</b></p>
-            <ul className="text-sm list-disc pl-5 mt-1 space-y-1">
-              <li><code>file</code>: A base64 encoded string of the audio file.</li>
-              <li><code>request_id</code>: A unique identifier for the request.</li>
-              <li><code>srt_timestamp</code>: A string containing timestamps in SubRip (SRT) format.</li>
-              <li><code>timestamps</code>: An array of word-level timestamp objects, each with start/end times.</li>
-            </ul>
-          </>
-        }
+        // title="Output Format"
+        // description={
+        //   <>
+        //     <p className="text-m">The response includes the generated audio and detailed timing data:</p>
+        //     <ul className="text-sm list-disc pl-5 mt-2 space-y-1">
+        //       <li><code>file</code>: Base64-encoded audio file in the requested format</li>
+        //       <li><code>request_id</code>: Unique identifier for this request</li>
+        //       <li><code>srt_timestamp</code>: Subtitle timestamps in SRT format</li>
+        //       <li><code>timestamps</code>: Array of word-level timing data with start/end times and text</li>
+        //     </ul>
+        //   </>
+        // }
         code={JSON.stringify(responseExamples.text_to_speech, null, 2)}
       />
     </div>

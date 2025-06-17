@@ -1,5 +1,6 @@
 import requests
 import json
+import base64
 
 url = "https://cantonese.ai/api/tts"
 
@@ -15,7 +16,7 @@ payload = json.dumps({
   "voice_id": "2725cf0f-efe2-4132-9e06-62ad84b2973d",
   "should_enhance": False,
   "should_convert_from_simplified_to_traditional": True,
-  "should_return_timestamp": False
+  "should_return_timestamp": True
 })
 headers = {
   'Content-Type': 'application/json'
@@ -23,5 +24,12 @@ headers = {
 
 response = requests.request("POST", url, headers=headers, data=payload)
 
+response_data = response.json()
+
+print(response.text)
+
+audio_base64 = response_data['file']
+audio_bytes = base64.b64decode(audio_base64)
+
 with open('output.wav', 'wb') as f:
-    f.write(response.content);
+    f.write(audio_bytes)

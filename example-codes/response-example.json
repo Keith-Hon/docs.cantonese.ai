@@ -1,49 +1,38 @@
 {
   "standard": {
-    "text": "你好 我係 Alice。你好 我係 Bob。",
-    "is_cached": true,
-    "duration": 14.912,
-    "process_time": 0.3366544246673584
+    "text": "When you call someone who is thousands of miles away, you're using a satellite.",
+    "duration": "6.540000",
+    "is_cached": false,
+    "process_time": 0.18551874160766602
   },
-  "with_timestamps": {
-    "text": "你好 我係 Alice。你好 我係 Bob。",
-    "is_cached": true,
-    "duration": 14.912,
-    "process_time": 0.4,
-    "timestamp": "00:00:00,000 --> 00:00:05,000"
+  "with_timestamps":{
+    "text":"1\n00:00:01,032 --> 00:00:04,083\nWhen you call someone who is thousands of\n\n2\n00:00:04,083 --> 00:00:04,868\n miles away, you're using a satellite.\n\n",
+    "duration":"6.540000",
+    "process_time":1.863849401473999
   },
   "with_diarization": {
-    "text": "你好 我係 Alice。你好 我係 Bob。",
-    "is_cached": true,
-    "duration": 14.912,
-    "process_time": 0.5,
-    "diarization": [
-      { "speaker": "SPEAKER_00", "text": "你好 我係 Alice。", "start": 0.1, "end": 1.6 },
-      { "speaker": "SPEAKER_01", "text": "你好 我係 Bob。", "start": 2.0, "end": 3.5 }
-    ]
+    "text": "When you call someone who is thousands of miles away, you're using a satellite.",
+    "diarization": "SPEAKER_00: When you call someone who is thousands of miles away, you're using a satellite.",
+    "is_cached": false,
+    "duration": "6.540000",
+    "process_time": 0.18898367881774902
   },
   "with_timestamps_and_diarization": {
-    "text": "你好 我係 Alice。你好 我係 Bob。",
-    "is_cached": true,
-    "duration": 14.912,
-    "process_time": 0.6,
-    "diarization": [
-      {
-        "speaker": "SPEAKER_00",
-        "text": "你好 我係 Alice。",
-        "timestamp": "00:00:00,000 --> 00:00:05,000"
-      },
-      {
-        "speaker": "SPEAKER_01",
-        "text": "你好 我係 Bob。",
-        "timestamp": "00:00:00,000 --> 00:00:05,000"
-      }
-    ]
+    "text":"1\n00:00:01,032 --> 00:00:04,083\nSPEAKER_00: When you call someone who is thousands of\n\n2\n00:00:04,083 --> 00:00:04,868\nSPEAKER_00:  miles away, you're using a satellite.\n\n",
+    "is_cached":true,
+    "duration":"6.540000",
+    "process_time":3.2193245887756348
   },
   "text_to_speech": {
-    "file": "UklGRiQAAABXQVZFZm10IBAAAAABAAEARKwAAIhYAQACABAAZGF0YQAAAAA=",
+    "file": "Z+AOEA4wHjAXf7s/Qw7uXoYuwz8LD22PVH8gzwR+os6zrq...",
     "request_id": "a1b2c3d4-e5f6-7890-1234-567890abcdef",
-    "srt_timestamp": "1\\n00:00:00,100 --> 00:00:00,500\\n你好\\n\\n2\\n00:00:00,500 --> 00:00:00,900\\n我係\\n\\n3\\n00:00:01,000 --> 00:00:01,500\\nAlice",
-    "timestamps": "00:00:00,000 --> 00:00:05,000"
+    "srt_timestamp": "1\n00:00:00,000 --> 00:00:01,984\n你今日食咗飯未\n\n",
+    "timestamps": [
+      {
+        "start": 0,
+        "end": 1.984,
+        "text": "你今日食咗飯未"
+      }
+    ]
   }
 }
