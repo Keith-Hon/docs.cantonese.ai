@@ -1,3 +1,6 @@
+const path = require('path');
+const fs = require('fs');
+
 const url = "https://cantonese.ai/api/tts";
 
 const payload = {
@@ -15,21 +18,23 @@ const payload = {
   should_return_timestamp: false
 };
 
-const response = await fetch(url, {
-  method: 'POST',
-  headers: {
-    'Content-Type': 'application/json'
-  },
-  body: JSON.stringify(payload)
-});
+(async () => {
+  const response = await fetch(url, {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify(payload)
+  });
 
-if (response.ok) {
-  const audioBlob = await response.blob();
-  const url = window.URL.createObjectURL(audioBlob);
-  const a = document.createElement('a');
-  a.href = url;
-  a.download = 'output.wav';
-  a.click();
-} else {
-  console.error('Error:', response.status);
-}
+  if (response.ok) {
+    const arrayBuffer = await response.arrayBuffer();
+    const buffer = Buffer.from(arrayBuffer);
+    
+    const outputPath = path.join(__dirname, 'output.wav');
+    fs.writeFileSync(outputPath, buffer);
+    
+  } else {
+    console.error('Error:', response.status);
+  }
+})();
